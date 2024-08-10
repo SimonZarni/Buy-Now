@@ -1,0 +1,1944 @@
+{
+  "orders": [
+    {
+      "id": "b6ce",
+      "orderNumber": "ORD-286456",
+      "orderDate": "7/29/2024",
+      "orderTime": "19:40:20",
+      "userId": "77e9",
+      "userEmail": "helilin15@gmail.com",
+      "userPhone": "0998743",
+      "address": "Infront Of Bagaya Monastery,Sagaing-Mandalay Road",
+      "town": "Mandalay",
+      "zipCode": "55555",
+      "country": "Canada",
+      "billingZip": "8898676",
+      "creditCardNumber": "2411",
+      "expMonth": "8",
+      "expYear": "9",
+      "cvc": "0",
+      "cartItems": [
+        {
+          "productId": "3503",
+          "quantity": 4,
+          "name": "Dior Addict Shine Lacquer Lipstick 16gr Lip Glow Lip",
+          "price": "14.99",
+          "selectedColor": {
+            "name": "Orange",
+            "code": "#bc4704"
+          },
+          "selectedSize": null
+        }
+      ],
+      "total": 59.96
+    },
+    {
+      "id": "764a",
+      "orderNumber": "ORD-443848",
+      "orderDate": "29/07/2024",
+      "orderTime": "19:43:43",
+      "userId": "77e9",
+      "userEmail": "sally@gmail.com",
+      "userPhone": "32423",
+      "address": "Mandalay",
+      "town": "Mandalay",
+      "zipCode": "55555",
+      "country": "UK",
+      "billingZip": "11111",
+      "creditCardNumber": "909787",
+      "expMonth": "9",
+      "expYear": "0",
+      "cvc": "67",
+      "cartItems": [
+        {
+          "productId": "1003",
+          "quantity": 1,
+          "name": "Canon EOS R5",
+          "price": "3899.99",
+          "selectedColor": {
+            "name": "White",
+            "code": "#ffffff"
+          },
+          "selectedSize": null
+        },
+        {
+          "productId": "2001",
+          "quantity": 7,
+          "name": "Zara LINEN BLEND MIDI DRESS",
+          "price": "39.99",
+          "selectedColor": {
+            "name": "Red",
+            "code": "#ac0c06"
+          },
+          "selectedSize": "M"
+        }
+      ],
+      "total": 4179.92
+    },
+    {
+      "id": "80d4",
+      "orderNumber": "ORD-552127",
+      "orderDate": "29/07/2024",
+      "orderTime": "19:54:56",
+      "userId": "77e9",
+      "userEmail": "jafibe5294@cgbird.com",
+      "userPhone": "20509320",
+      "address": "Infront Of Bagaya Monastery,Sagaing-Mandalay Road",
+      "town": "Mandalay",
+      "zipCode": "09i0",
+      "country": "USA",
+      "billingZip": "9uu990",
+      "creditCardNumber": "8778",
+      "expMonth": "0",
+      "expYear": "8",
+      "cvc": "i",
+      "cartItems": [
+        {
+          "productId": "2002",
+          "quantity": 3,
+          "name": "Zara Floral Appliqué Crop Top",
+          "price": "29.99",
+          "selectedColor": {
+            "name": "Black",
+            "code": "#000000"
+          },
+          "selectedSize": "M"
+        }
+      ],
+      "total": 89.97
+    },
+    {
+      "id": "abc4",
+      "orderNumber": "ORD-852150",
+      "orderDate": "29/07/2024",
+      "orderTime": "20:16:32",
+      "userId": "77e9",
+      "userEmail": "yo@gmail.com",
+      "userPhone": "32423",
+      "address": "ij",
+      "town": "Mandalay",
+      "zipCode": "999",
+      "country": "USA",
+      "billingZip": "9uu990",
+      "creditCardNumber": "898990",
+      "expMonth": "99",
+      "expYear": "7",
+      "cvc": "6",
+      "cartItems": [
+        {
+          "productId": "2001",
+          "quantity": 1,
+          "name": "Zara LINEN BLEND MIDI DRESS",
+          "price": "39.99",
+          "selectedColor": {
+            "name": "Black",
+            "code": "#000000"
+          },
+          "selectedSize": "S"
+        },
+        {
+          "productId": "2020",
+          "quantity": 3,
+          "name": "Elegant Bridal Wedding Dress Shoes",
+          "price": "80.99",
+          "selectedColor": {
+            "name": "Ivory",
+            "code": "#fffff0"
+          },
+          "selectedSize": "M"
+        }
+      ],
+      "total": 282.96
+    },
+    {
+      "id": "e426",
+      "orderNumber": "ORD-90243",
+      "orderDate": "30/07/2024",
+      "orderTime": "10:35:32",
+      "userId": "77e9",
+      "userEmail": "sally@gmail.com",
+      "userPhone": "9082904094",
+      "address": "Mandalay",
+      "town": "Mandalay",
+      "zipCode": "123345",
+      "country": "UK",
+      "billingZip": "325",
+      "creditCardNumber": "2352141",
+      "expMonth": "21",
+      "expYear": "2",
+      "cvc": "3",
+      "cartItems": [
+        {
+          "productId": "7001",
+          "quantity": 1,
+          "name": "Nike Premier League 21/22 Flight Football White Life Style Sports",
+          "price": "29.99",
+          "selectedColor": null,
+          "selectedSize": null
+        }
+      ],
+      "total": 29.99
+    },
+    {
+      "id": "e9a2",
+      "orderNumber": "ORD-302643",
+      "orderDate": "30/07/2024",
+      "orderTime": "10:37:59",
+      "userId": "77e9",
+      "userEmail": "helilin15@gmail.com",
+      "userPhone": "32423",
+      "address": " City Mart Super Market, 19th St",
+      "town": "Mandalay",
+      "zipCode": "123345",
+      "country": "Canada",
+      "billingZip": "8889",
+      "creditCardNumber": "2141",
+      "expMonth": "2",
+      "expYear": "21",
+      "cvc": "2",
+      "cartItems": [
+        {
+          "productId": "1001",
+          "quantity": 2,
+          "name": "iPhone 15 Pro Max",
+          "price": "1000.99",
+          "selectedColor": {
+            "name": "Purple",
+            "code": "#736ca0"
+          },
+          "selectedSize": null
+        },
+        {
+          "productId": "1001",
+          "quantity": 1,
+          "name": "iPhone 15 Pro Max",
+          "price": "1000.99",
+          "selectedColor": {
+            "name": "Black",
+            "code": "#000000"
+          },
+          "selectedSize": null
+        }
+      ],
+      "total": 3002.9700000000003
+    },
+    {
+      "id": "b2e4",
+      "orderNumber": "ORD-268612",
+      "orderDate": "30/07/2024",
+      "orderTime": "10:50:41",
+      "userId": "77e9",
+      "userEmail": "helilin15@gmail.com",
+      "userPhone": "32423",
+      "address": "Mandalay",
+      "town": "Mandalay",
+      "zipCode": "999",
+      "country": "UK",
+      "billingZip": "2144",
+      "creditCardNumber": "0090",
+      "expMonth": "o9",
+      "expYear": "9023",
+      "cvc": "221",
+      "cartItems": [
+        {
+          "productId": "3002",
+          "quantity": 3,
+          "name": "Nike Killshot OG Black White DC1982-001",
+          "price": "129.99",
+          "selectedColor": {
+            "name": "White",
+            "code": "#ffffff"
+          },
+          "selectedSize": "M"
+        },
+        {
+          "productId": "3002",
+          "quantity": 1,
+          "name": "Nike Killshot OG Black White DC1982-001",
+          "price": "129.99",
+          "selectedColor": {
+            "name": "Black",
+            "code": "#000000"
+          },
+          "selectedSize": "S"
+        }
+      ],
+      "total": 519.96
+    },
+    {
+      "id": "88cd",
+      "orderNumber": "ORD-562667",
+      "orderDate": "30/07/2024",
+      "orderTime": "13:58:02",
+      "userId": "77e9",
+      "userEmail": "helilin15@gmail.com",
+      "userPhone": "03294843",
+      "address": " City Mart Super Market, 19th St",
+      "town": "Mandalay",
+      "zipCode": "123345",
+      "country": "Myanmar",
+      "billingZip": "89",
+      "creditCardNumber": "89889",
+      "expMonth": "099",
+      "expYear": "89",
+      "cvc": "88",
+      "cartItems": [
+        {
+          "productId": "2003",
+          "quantity": 1,
+          "name": "Zara LONG PRINTED SKIRT",
+          "price": "37.99",
+          "selectedColor": {
+            "name": "Yellow",
+            "code": "#ffffba"
+          },
+          "selectedSize": "L"
+        },
+        {
+          "productId": "2001",
+          "quantity": 1,
+          "name": "Zara LINEN BLEND MIDI DRESS",
+          "price": "39.99",
+          "selectedColor": {
+            "name": "White",
+            "code": "#ffffff"
+          },
+          "selectedSize": "S"
+        },
+        {
+          "productId": "2001",
+          "quantity": 1,
+          "name": "Zara LINEN BLEND MIDI DRESS",
+          "price": "39.99",
+          "selectedColor": {
+            "name": "White",
+            "code": "#ffffff"
+          },
+          "selectedSize": "M"
+        }
+      ],
+      "total": 117.97
+    },
+    {
+      "id": "a67a",
+      "orderNumber": "ORD-583746",
+      "orderDate": "30/07/2024",
+      "orderTime": "14:03:05",
+      "userId": "77e9",
+      "userEmail": "helilin15@gmail.com",
+      "userPhone": "788",
+      "address": "o",
+      "town": "90",
+      "zipCode": "99",
+      "country": "UK",
+      "billingZip": "oii",
+      "creditCardNumber": "-09",
+      "expMonth": "pop",
+      "expYear": "ook",
+      "cvc": "ji",
+      "cartItems": [
+        {
+          "productId": "2002",
+          "quantity": 1,
+          "name": "Zara Floral Appliqué Crop Top",
+          "price": "29.99",
+          "selectedColor": {
+            "name": "Black",
+            "code": "#000000"
+          },
+          "selectedSize": "M"
+        }
+      ],
+      "total": 29.99
+    },
+    {
+      "id": "2a14",
+      "orderNumber": "ORD-904398",
+      "orderDate": "30/07/2024",
+      "orderTime": "14:09:16",
+      "userId": "77e9",
+      "userEmail": "admin@gmail.com",
+      "userPhone": "0998743",
+      "address": "Infront Of Bagaya Monastery,Sagaing-Mandalay Road",
+      "town": "90",
+      "zipCode": "09i0",
+      "country": "USA",
+      "billingZip": "8898676",
+      "creditCardNumber": "uuyumkk",
+      "expMonth": "kk",
+      "expYear": "jj",
+      "cvc": "nh",
+      "cartItems": [
+        {
+          "productId": "2003",
+          "quantity": 1,
+          "name": "Zara LONG PRINTED SKIRT",
+          "price": "37.99",
+          "selectedColor": {
+            "name": "White",
+            "code": "#ffffff"
+          },
+          "selectedSize": "M"
+        }
+      ],
+      "total": 37.99
+    },
+    {
+      "id": "8754",
+      "orderNumber": "ORD-368371",
+      "orderDate": "31/07/2024",
+      "orderTime": "11:58:05",
+      "userId": "77e9",
+      "userEmail": "admin@gmail.com",
+      "userPhone": "20509320",
+      "address": "Mandalay",
+      "town": "Mandalay",
+      "zipCode": "55555",
+      "country": "USA",
+      "billingZip": "9986",
+      "creditCardNumber": "987655",
+      "expMonth": "9",
+      "expYear": "6",
+      "cvc": "7",
+      "cartItems": [
+        {
+          "productId": "1001",
+          "quantity": 1,
+          "name": "iPhone 15 Pro Max",
+          "price": "1000.99",
+          "selectedColor": {
+            "name": "Black",
+            "code": "#000000"
+          },
+          "selectedSize": null
+        },
+        {
+          "productId": "8001",
+          "quantity": 1,
+          "name": "Trek Bicycle",
+          "price": "249.99",
+          "selectedColor": null,
+          "selectedSize": null
+        }
+      ],
+      "total": 1250.98
+    },
+    {
+      "id": "78b9",
+      "orderNumber": "ORD-986699",
+      "orderDate": "31/07/2024",
+      "orderTime": "17:46:00",
+      "userId": "77e9",
+      "userEmail": "sally@gmail.com",
+      "userPhone": "0998743",
+      "address": "Mandalay",
+      "town": "Mandalay",
+      "zipCode": "123345",
+      "country": "UK",
+      "billingZip": "8889",
+      "creditCardNumber": "1321424",
+      "expMonth": "222",
+      "expYear": "3",
+      "cvc": "1",
+      "cartItems": [
+        {
+          "productId": "2010",
+          "quantity": 1,
+          "name": "LOUIS VUITTON  Leather Handbag",
+          "price": "3999.99",
+          "selectedColor": {
+            "name": "Brown",
+            "code": "#8b4513"
+          },
+          "selectedSize": null
+        },
+        {
+          "productId": "2011",
+          "quantity": 1,
+          "name": "Dior Tote Bag",
+          "price": "3949.99",
+          "selectedColor": {
+            "name": "White",
+            "code": "#ffffff"
+          },
+          "selectedSize": null
+        }
+      ],
+      "total": 7949.98
+    },
+    {
+      "id": "28cf",
+      "orderNumber": "ORD-4305",
+      "orderDate": "31/07/2024",
+      "orderTime": "17:49:12",
+      "userId": "77e9",
+      "userEmail": "sally@gmail.com",
+      "userPhone": "03294843",
+      "address": "Mandalay",
+      "town": "Mandalay",
+      "zipCode": "55555",
+      "country": "USA",
+      "billingZip": "8898676",
+      "creditCardNumber": "2131231",
+      "expMonth": "2",
+      "expYear": "2",
+      "cvc": "2",
+      "cartItems": [
+        {
+          "productId": "2010",
+          "quantity": 2,
+          "name": "LOUIS VUITTON  Leather Handbag",
+          "price": "3999.99",
+          "selectedColor": {
+            "name": "Brown",
+            "code": "#8b4513"
+          },
+          "selectedSize": null
+        },
+        {
+          "productId": "2010",
+          "quantity": 1,
+          "name": "LOUIS VUITTON  Leather Handbag",
+          "price": "3999.99",
+          "selectedColor": {
+            "name": "Black",
+            "code": "#000000"
+          },
+          "selectedSize": null
+        }
+      ],
+      "total": 11999.97
+    },
+    {
+      "id": "6fc1",
+      "orderNumber": "ORD-254326",
+      "orderDate": "31/07/2024",
+      "orderTime": "18:15:14",
+      "userId": "77e9",
+      "userEmail": "helilin15@gmail.com",
+      "userPhone": "0998743",
+      "address": " City Mart Super Market, 19th St, Mandalay",
+      "town": "Mandalay",
+      "zipCode": "09i0",
+      "country": "Myanmar",
+      "billingZip": "8898676",
+      "creditCardNumber": "2536172899",
+      "expMonth": "65765567de34e",
+      "expYear": "gfd4",
+      "cvc": "\\6rdf3",
+      "cartItems": [
+        {
+          "productId": "1003",
+          "quantity": 8,
+          "name": "Canon EOS R5",
+          "price": "3899.99",
+          "selectedColor": {
+            "name": "Black",
+            "code": "#000000"
+          },
+          "selectedSize": null
+        },
+        {
+          "productId": "2002",
+          "quantity": 2,
+          "name": "Zara Floral Appliqué Crop Top",
+          "price": "29.99",
+          "selectedColor": {
+            "name": "Black",
+            "code": "#000000"
+          },
+          "selectedSize": "M"
+        }
+      ],
+      "total": 31259.899999999998
+    },
+    {
+      "id": "7b64",
+      "orderNumber": "ORD-208660",
+      "orderDate": "31/07/2024",
+      "orderTime": "18:19:24",
+      "userId": "77e9",
+      "userEmail": "helilin15@gmail.com",
+      "userPhone": "09776653477",
+      "address": "Mandalay",
+      "town": "Mandalay",
+      "zipCode": "mandalay",
+      "country": "Myanmar",
+      "billingZip": "11111",
+      "creditCardNumber": "651863536171",
+      "expMonth": " 3",
+      "expYear": "2",
+      "cvc": "1",
+      "cartItems": [
+        {
+          "productId": "1001",
+          "quantity": 50,
+          "name": "iPhone 15 Pro Max",
+          "price": "1000.99",
+          "selectedColor": {
+            "name": "Purple",
+            "code": "#736ca0"
+          },
+          "selectedSize": null
+        }
+      ],
+      "total": 50049.5
+    },
+    {
+      "id": "5a18",
+      "orderNumber": "ORD-522181",
+      "orderDate": "03/08/2024",
+      "orderTime": "10:54:21",
+      "userId": "77e9",
+      "userEmail": "sally@gmail.com",
+      "userPhone": "09241512412",
+      "address": "Mandalay",
+      "town": "Mandalay",
+      "zipCode": "55555",
+      "country": "USA",
+      "billingZip": "234325",
+      "creditCardNumber": "2142231",
+      "expMonth": "23",
+      "expYear": "3",
+      "cvc": "2",
+      "cartItems": [
+        {
+          "productId": "7002",
+          "quantity": 1,
+          "name": "Yoga Mats, Natural & GOTS Organic Certified",
+          "price": "19.99",
+          "selectedColor": null,
+          "selectedSize": null
+        },
+        {
+          "productId": "3504",
+          "quantity": 6,
+          "name": "3CE New Take Eyeshadow Palette 3 Types",
+          "price": "32.99",
+          "selectedColor": {
+            "name": "Orange",
+            "code": "#bc4704"
+          },
+          "selectedSize": null
+        },
+        {
+          "productId": "7003",
+          "quantity": 2,
+          "name": "Vermont Tennis Racket & Ball Set",
+          "price": "63.99",
+          "selectedColor": null,
+          "selectedSize": null
+        }
+      ],
+      "total": 345.91
+    },
+    {
+      "id": "a799",
+      "orderNumber": "ORD-115494",
+      "orderDate": "03/08/2024",
+      "orderTime": "11:34:48",
+      "userId": "fd3c",
+      "userEmail": "sally@gmail.com",
+      "userPhone": "03294843",
+      "address": " City Mart Super Market, 19th St",
+      "town": "Mandalay",
+      "zipCode": "55555",
+      "country": "Myanmar",
+      "billingZip": "55555",
+      "creditCardNumber": "112",
+      "expMonth": "11",
+      "expYear": "11",
+      "cvc": "111",
+      "cartItems": [
+        {
+          "productId": "1001",
+          "quantity": 2,
+          "name": "iPhone 15 Pro Max",
+          "price": "1000.99",
+          "selectedColor": {
+            "name": "Black",
+            "code": "#000000"
+          },
+          "selectedSize": null
+        },
+        {
+          "productId": "1003",
+          "quantity": 1,
+          "name": "Canon EOS R5",
+          "price": "3899.99",
+          "selectedColor": {
+            "name": "Black",
+            "code": "#000000"
+          },
+          "selectedSize": null
+        }
+      ],
+      "total": 5901.969999999999
+    },
+    {
+      "id": "9450",
+      "orderNumber": "ORD-674279",
+      "orderDate": "08/08/2024",
+      "orderTime": "21:39:48",
+      "status": "pending",
+      "userId": "d227",
+      "userEmail": "simonallen364@gmail.com",
+      "userPhone": "09585858",
+      "address": "84 street 36x37",
+      "town": "Mandalay",
+      "zipCode": "55555",
+      "country": "Myanmar",
+      "billingZip": "55555",
+      "creditCardNumber": "111",
+      "expMonth": "11",
+      "expYear": "1111",
+      "cvc": "111",
+      "cartItems": [
+        {
+          "productId": "1001",
+          "quantity": 1,
+          "name": "iPhone 15 Pro Max",
+          "price": "1000.99",
+          "selectedColor": {
+            "name": "Black",
+            "code": "#000000"
+          },
+          "selectedSize": null
+        }
+      ],
+      "total": 1000.99
+    }
+  ],
+  "users": [
+    {
+      "id": "fd3c",
+      "username": "admin",
+      "email": "admin@gmail.com",
+      "password": "123"
+    },
+    {
+      "id": "77e9",
+      "username": "Helilin",
+      "email": "helilin15@gmail.com",
+      "password": "sally2002911"
+    }
+  ],
+  "reviews": [
+    {
+      "id": "1aa0",
+      "productId": "1001",
+      "userId": "77e9",
+      "username": "Helilin",
+      "reviewText": "good",
+      "rating": 5,
+      "date": "2024-07-27T05:25:16.110Z"
+    },
+    {
+      "id": "6071",
+      "productId": "1002",
+      "userId": "77e9",
+      "username": "Helilin",
+      "reviewText": "Bad",
+      "rating": 1,
+      "date": "2024-07-27T05:25:43.545Z"
+    },
+    {
+      "id": "072d",
+      "productId": "2001",
+      "userId": "77e9",
+      "username": "Helilin",
+      "reviewText": "nice dress\n",
+      "rating": 3,
+      "date": "2024-07-29T09:51:46.198Z"
+    },
+    {
+      "id": "6319",
+      "productId": "2001",
+      "userId": "77e9",
+      "username": "Helilin",
+      "reviewText": "good",
+      "rating": 5,
+      "date": "2024-07-29T09:56:50.385Z"
+    },
+    {
+      "id": "3d6a",
+      "productId": "2001",
+      "userId": "77e9",
+      "username": "Helilin",
+      "reviewText": "pretty",
+      "rating": 4,
+      "date": "2024-07-29T10:17:47.582Z"
+    },
+    {
+      "id": "005b",
+      "productId": "2001",
+      "userId": "77e9",
+      "username": "Helilin",
+      "reviewText": "iewjr",
+      "rating": 1,
+      "date": "2024-07-29T10:19:28.321Z"
+    },
+    {
+      "id": "7191",
+      "productId": "2001",
+      "userId": "77e9",
+      "username": "Helilin",
+      "reviewText": "ggood",
+      "rating": 5,
+      "date": "2024-07-29T10:20:09.542Z"
+    },
+    {
+      "id": "a2b5",
+      "productId": "2002",
+      "userId": "77e9",
+      "username": "Helilin",
+      "reviewText": "nice",
+      "rating": 5,
+      "date": "2024-07-29T12:13:35.420Z"
+    },
+    {
+      "id": "1228",
+      "productId": "2020",
+      "userId": "77e9",
+      "username": "Helilin",
+      "reviewText": "ha ha",
+      "rating": 1,
+      "date": "2024-07-29T12:14:36.892Z"
+    },
+    {
+      "id": "1021",
+      "productId": "2003",
+      "userId": "77e9",
+      "username": "Helilin",
+      "reviewText": "long dress",
+      "rating": 4,
+      "date": "2024-07-30T06:04:51.385Z"
+    },
+    {
+      "id": "4436",
+      "productId": "2012",
+      "userId": "77e9",
+      "username": "Helilin",
+      "reviewText": "nice",
+      "rating": 3,
+      "date": "2024-07-30T06:09:52.230Z"
+    },
+    {
+      "id": "e378",
+      "productId": "2012",
+      "userId": "77e9",
+      "username": "Helilin",
+      "reviewText": "ijii",
+      "rating": 1,
+      "date": "2024-07-30T06:13:57.861Z"
+    },
+    {
+      "id": "3e81",
+      "productId": "2012",
+      "userId": "77e9",
+      "username": "Helilin",
+      "reviewText": "",
+      "rating": 5,
+      "date": "2024-07-30T06:14:30.543Z"
+    },
+    {
+      "id": "2a5c",
+      "productId": "1001",
+      "userId": "77e9",
+      "username": "Helilin",
+      "reviewText": "",
+      "rating": 3,
+      "date": "2024-07-30T07:25:04.555Z"
+    },
+    {
+      "id": "1a1b",
+      "productId": "3001",
+      "userId": "77e9",
+      "username": "Helilin",
+      "reviewText": "Good",
+      "rating": 4,
+      "date": "2024-07-30T08:24:18.462Z"
+    },
+    {
+      "id": "3bc6",
+      "productId": "1003",
+      "userId": "77e9",
+      "username": "Helilin",
+      "reviewText": "good",
+      "rating": 4,
+      "date": "2024-07-31T11:03:00.355Z"
+    },
+    {
+      "id": "1763",
+      "productId": "2002",
+      "userId": "fd3c",
+      "username": "admin",
+      "reviewText": "good good",
+      "rating": 3,
+      "date": "2024-08-03T05:18:26.286Z"
+    },
+    {
+      "id": "3793",
+      "productId": "2002",
+      "userId": "fd3c",
+      "username": "admin",
+      "reviewText": "gkw",
+      "rating": 3,
+      "date": "2024-08-03T05:18:51.130Z"
+    }
+  ],
+  "categories": [
+    {
+      "id": "1",
+      "name": "Electronics",
+      "description": "Devices, gadgets, and accessories",
+      "image_url": "https://www.three.co.uk/content/dam/threedigital/new-dam-structure-temp/device-images/phones/apple/iphone-15-pro/popular-deals-tile-620px-iphone15-pro-natural-titanium.png",
+      "subcategories": [
+        {
+          "id": 11,
+          "name": "Mobile Phones",
+          "description": "Smartphones and accessories",
+          "image_url": "https://i5.walmartimages.com/seo/Pre-Owned-Apple-iPhone-X-256GB-Factory-Unlocked-Smartphone-Refurbished-Good_9b5ec8b2-9665-463b-adc5-64829ba72da6.1b496e5a8fcee76fdad69bae12b54745.jpeg"
+        },
+        {
+          "id": 12,
+          "name": "Laptops",
+          "description": "Laptops and accessories",
+          "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSj9zTsUw9GLhneuaoFGKsx3WAzZc9qE1SK_w&s"
+        },
+        {
+          "id": 13,
+          "name": "Cameras",
+          "description": "Digital cameras and accessories",
+          "image_url": "https://i1.adis.ws/i/canon/eos-r5_front_rf24-105mmf4lisusm_square_32c26ad194234d42b3cd9e582a21c99b?$prod-gallery-1by1-jpg$"
+        },
+        {
+          "id": 14,
+          "name": "TV",
+          "description": "Digital cameras and accessories",
+          "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgCZOIFg_AAIxHrOcQxBCoPafc1vOGQTScLA&s"
+        },
+        {
+          "id": 15,
+          "name": "Speaker",
+          "description": "Digital cameras and accessories",
+          "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScxpl0czOPlWIAbPOtybkPU3OT5E1wBxhvGQ&s"
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "name": "Women Fashion",
+      "description": "Clothing, footwear, and accessories",
+      "image_url": "https://oldnavyprod.a.bigcontent.io/v1/static/240501_25-M1190_W_DP_Sale_Hero%20jpg",
+      "subcategories": [
+        {
+          "id": 21,
+          "name": "Women Clothing",
+          "description": "Women's clothing and accessories",
+          "image_url": "https://www.bygoods.com/media/catalog/product/cache/1/image/800x/1dd3c1054c06760f44f47a9755af505d/4/5/4596604501_634590860.jpg"
+        },
+        {
+          "id": 22,
+          "name": "Women Bag",
+          "description": "Men's clothing and accessories",
+          "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZoRy6MLRqzs1PjNPJqEZ7rjAj0MlR--aq0w&s"
+        },
+        {
+          "id": 23,
+          "name": "Women Shoe",
+          "description": "Men's clothing and accessories",
+          "image_url": "https://img.staticdj.com/db6b6b128990a6070c9092f9cb71328f.JPG"
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "name": "Men Fashion",
+      "description": "Clothing, footwear, and accessories",
+      "image_url": "https://johnlewis.scene7.com/is/image/JohnLewis/mens-brands_nav5_190324",
+      "subcategories": [
+        {
+          "id": 24,
+          "name": "Men Clothing",
+          "description": "Women's clothing and accessories",
+          "image_url": "https://media.very.co.uk/i/sd/ctmt-213-mens-dept-1?%24poi%24=&aspect=1%3A1&w=900&qlt=default&fmt=jpg&fmt.jpeg.interlaced=true"
+        },
+        {
+          "id": 25,
+          "name": "Men Shoe",
+          "description": "Men's clothing and accessories",
+          "image_url": "https://cdn-ejegf.nitrocdn.com/ptKzRmECffiRbAESDChJvypcTLFUXyUd/assets/images/optimized/rev-92315bb/runwaycatalog.in/wp-content/uploads/2021/01/3-2-595x595-compressed-330x330.jpg"
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "name": "Baby Accessories & Kid Fashion",
+      "description": "Clothing, footwear, and accessories",
+      "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSaK-NIi-RXIcg_sGZOVeN79fdGk4OICsxjXg&s",
+      "subcategories": [
+        {
+          "id": 26,
+          "name": "Kid Clothing",
+          "description": "Women's clothing and accessories",
+          "image_url": "https://img.freepik.com/premium-photo/child-kid-tshirt-template-with-yellow-green-red-orange-grey-tshirt-design-with-white-background_873925-155760.jpg"
+        },
+        {
+          "id": 27,
+          "name": "Baby personal Care",
+          "description": "Men's clothing and accessories",
+          "image_url": "https://media.takealot.com/covers_tsins/63710531/63710531-1-zoom.jpeg"
+        },
+        {
+          "id": 28,
+          "name": "Feeding",
+          "description": "Men's clothing and accessories",
+          "image_url": "https://m.media-amazon.com/images/I/61BvAqE1H-L.jpg"
+        }
+      ]
+    },
+    {
+      "id": "5",
+      "name": "Home & Kitchen",
+      "description": "Home appliances, kitchenware, and furniture",
+      "image_url": "https://www.vassio.co.in/wp-content/uploads/2023/09/Evita-two-seater-dark-brown-colour-sofa-300x300.jpg",
+      "subcategories": [
+        {
+          "id": 31,
+          "name": "Furniture",
+          "description": "Furniture for home and office",
+          "image_url": "https://assets.wfcdn.com/im/29094649/resize-h755-w755%5Ecompr-r85/2813/281392791/Williams+Panel+Bed.jpg"
+        },
+        {
+          "id": 32,
+          "name": "Appliances",
+          "description": "Home and kitchen appliances",
+          "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGG-Zj48r0YizF6wx6U5NX47h4svAmFmI3e-zBH5tlurenKviDYYPZpw5xqdlqIbc_ZuY&usqp=CAU"
+        },
+        {
+          "id": 33,
+          "name": "Decor",
+          "description": "Home decor items",
+          "image_url": "https://rukminim2.flixcart.com/image/850/1000/ky1vl3k0/wall-decoration/u/t/v/macrame-wall-hanging-shelf-wood-floating-1-onedeepwh012s-home-original-imagad6etqczrdst.jpeg?q=90&crop=false"
+        }
+      ]
+    },
+    {
+      "id": "6",
+      "name": "Books",
+      "description": "Books across various genres and categories",
+      "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1AS2d58D2N5oZuKEegL0qUobsiYJ6twypaGvTOyoNly8fkforrKD6eoDJbyfxl2Hhqa8&usqp=CAU",
+      "subcategories": [
+        {
+          "id": 41,
+          "name": "Fiction",
+          "description": "Fictional books and novels",
+          "image_url": "https://images-na.ssl-images-amazon.com/images/I/91CdklZOKvL._AC_UL330_SR330,330_.jpg"
+        },
+        {
+          "id": 42,
+          "name": "Non-Fiction",
+          "description": "Non-fictional books and literature",
+          "image_url": "https://static1.squarespace.com/static/538c02b0e4b02af139f8d973/t/5760e14240261d1b7dfd4870/1465966920520/?format=1500w"
+        },
+        {
+          "id": 43,
+          "name": "Children's Books",
+          "description": "Books for children",
+          "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAvs2FEWCrkloC3pGpZ8xCzJxDtjIkOjwaOw&s"
+        }
+      ]
+    },
+    {
+      "id": "7",
+      "name": "Sports & Outdoors",
+      "description": "Sports equipment, outdoor gear, and accessories",
+      "image_url": "https://www.onlinecollegeplan.com/wp-content/uploads/2023/08/Untitled-design-2023-08-14T152340.389-1024x1024.png",
+      "subcategories": [
+        {
+          "id": 51,
+          "name": "Sports Equipment",
+          "description": "Equipment for various sports",
+          "image_url": "https://i5.walmartimages.com/seo/Wilson-NFL-The-Duke-Official-Leather-Game-Football_c06eff5c-4127-45d7-9e8c-88ec5e450d51_1.c22c0d269e32f027a4765cfda5a5a950.jpeg?odnHeight=768&odnWidth=768&odnBg=FFFFFF"
+        },
+        {
+          "id": 52,
+          "name": "Outdoor Gear",
+          "description": "Gear and accessories for outdoor activities",
+          "image_url": "https://cdn11.bigcommerce.com/s-q9ptxvukwz/images/stencil/original/products/14866/212127/la-police-gear-tactical-bail-out-gear-bag-best-seller-bailoutbag__67224.1609289475.jpg?c=2"
+        },
+        {
+          "id": 53,
+          "name": "Fitness",
+          "description": "Fitness equipment and accessories",
+          "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQ5wZVTLfpXbt_hbz-biRYOpOnEFeib1TbvzLAVBiKYktPJn8Rx5NbHBCqkaaqr_dRfaU&usqp=CAU"
+        }
+      ]
+    },
+    {
+      "id": "8",
+      "name": "Beauty & Personal Care",
+      "description": "Skincare, makeup, and personal care products",
+      "image_url": "https://www.narscosmetics.eu/dw/image/v2/BCMQ_PRD/on/demandware.static/-/Sites-itemmaster_NARS/default/dw3e4c0cce/hi-res/B_SGF_10_M1_punjab_c2000x2000.jpg?sw=856&sh=750&sm=fit",
+      "subcategories": [
+        {
+          "id": 61,
+          "name": "Skincare",
+          "description": "Products for skincare routines",
+          "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBA4XXGqRO1ynPbfLrijHvhGlr3tvuITj3Sg&s"
+        },
+        {
+          "id": 62,
+          "name": "Makeup",
+          "description": "Cosmetics and makeup products",
+          "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIE11yVUUVPPUn7k7u2_groq2uFAH5UL0BtQ&s"
+        }
+      ]
+    },
+    {
+      "id": "9",
+      "name": "Automotive",
+      "description": "Car accessories and automotive parts",
+      "image_url": "https://kinderkraft.pl/media/wysiwyg/foteliki_samochodowe/comfort-up-i-size/KK-comfort-up-szary-ps-1.jpg",
+      "subcategories": [
+        {
+          "id": 71,
+          "name": "Car Accessories",
+          "description": "Accessories for cars",
+          "image_url": "https://www.motorbhp.com/image/cache/catalog/product/handle%20cover/tigor-500x416.jpg.webp"
+        },
+        {
+          "id": 72,
+          "name": "Car Parts",
+          "description": "Replacement parts for cars",
+          "image_url": "https://m.media-amazon.com/images/I/71nx9FiaoyL.jpg"
+        }
+      ]
+    },
+    {
+      "id": "10",
+      "name": "Toys & Games",
+      "description": "Toys, games, and hobbies",
+      "image_url": "https://cdn4.volusion.store/9nxdj-fchy5/v/vspfiles/photos/AR-01779-3.jpg?v-cache=1692098401",
+      "subcategories": [
+        {
+          "id": 81,
+          "name": "Action Figures",
+          "description": "Collectible action figures",
+          "image_url": "https://image.smythstoys.com/original/desktop/214147.jpg"
+        },
+        {
+          "id": 82,
+          "name": "Board Games",
+          "description": "Various board games",
+          "image_url": "https://i.ebayimg.com/images/g/WLIAAOSwDtJkyRDE/s-l1200.jpg"
+        }
+      ]
+    },
+    {
+      "id": "12",
+      "name": "Groceries",
+      "description": "Food, beverages, and household supplies",
+      "image_url": "https://anchorridge.org/wp-content/uploads/2020/05/Bag-Of-Groceries-1.png",
+      "subcategories": [
+        {
+          "id": 101,
+          "name": "Beverages",
+          "description": "Various types of drinks",
+          "image_url": "https://5.imimg.com/data5/SELLER/Default/2021/11/OX/FC/MP/73577147/stylish-transparent-glass-bottle-with-swing-top-cap-500ml-water-juices-milk-bottle-500x500.jpg"
+        },
+        {
+          "id": 102,
+          "name": "Snacks",
+          "description": "Assorted snacks and treats",
+          "image_url": "https://www.universalyums.com/wp-content/uploads/2023/05/Turkey-YY-Fanout.png"
+        }
+      ]
+    },
+    {
+      "id": "13",
+      "name": "Pet Supplies",
+      "description": "Products for pets and pet care",
+      "image_url": "https://www.cheerble.com/cdn/shop/files/7d25a1082bcaad9741b58590305f6e4a.jpg?v=1688034801&width=800",
+      "subcategories": [
+        {
+          "id": 111,
+          "name": "Pet Food",
+          "description": "Food for pets",
+          "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1VVUXFKQnrKIceCZClsuGAPxGFbh4eIUZiw&s"
+        },
+        {
+          "id": 112,
+          "name": "Pet Toys",
+          "description": "Toys for pets",
+          "image_url": "https://m.media-amazon.com/images/I/71ZpU6aRfjL.jpg"
+        }
+      ]
+    },
+    {
+      "id": "14",
+      "name": "Jewelry",
+      "description": "Jewelry and accessories",
+      "image_url": "https://kinclimg3.bluestone.com/f_jpg,c_scale,w_828,q_80,b_rgb:f0f0f0/giproduct/BIDG0319R180_YAA18DIG6XXXXXXXX_ABCD00-PICS-00001-1024-66194.png",
+      "subcategories": [
+        {
+          "id": 121,
+          "name": "Necklaces",
+          "description": "",
+          "image_url": "https://chpremier.com/cdn/shop/products/sapphire-and-diamond-necklace-snnel00133-253266_1024x1024.jpg?v=1631865027"
+        },
+        {
+          "id": 122,
+          "name": "Rings",
+          "description": "Assorted rings",
+          "image_url": "https://th.pandora.net/dw/image/v2/BJRN_PRD/on/demandware.static/-/Sites-pandora-master-catalog/default/dwea663109/productimages/singlepackshot/168289C01_RGB.jpg?sw=900&sh=900&sm=fit&sfrm=png&bgcolor=F5F5F5"
+        }
+      ]
+    },
+    {
+      "id": "15",
+      "name": "Office Supplies",
+      "description": "Products for office use",
+      "image_url": "https://m.media-amazon.com/images/I/81K5l37CaGL.jpg",
+      "subcategories": [
+        {
+          "id": 131,
+          "name": "Stationery",
+          "description": "Various stationery items",
+          "image_url": "https://5.imimg.com/data5/SELLER/Default/2022/4/VO/FV/UV/98975205/stationery-services-500x500.jpg"
+        },
+        {
+          "id": 132,
+          "name": "Office Furniture",
+          "description": "Furniture for office settings",
+          "image_url": "https://www.genesys-uk.com/wp-content/uploads/vega-wood-bench-desk1443-v2-500x500.png"
+        }
+      ]
+    }
+  ],
+  "products": [
+    {
+      "id": "1001",
+      "name": "iPhone 15 Pro Max",
+      "description": "Latest Apple iPhone with advanced features.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea",
+      "price": 1000.99,
+      "brand": "Apple",
+      "category_id": 1,
+      "subcategory_id": 11,
+      "image_url": "https://www.gizchina.com/wp-content/uploads/images/2023/01/iphone-15-pro-max-2.jpg",
+      "colors": [
+        {
+          "name": "Purple",
+          "code": "#736ca0"
+        },
+        {
+          "name": "Black",
+          "code": "#000000"
+        },
+        {
+          "name": "Silver",
+          "code": "#c0c0c0"
+        }
+      ]
+    },
+    {
+      "id": "1002",
+      "name": "MacBook Pro",
+      "description": "High performance laptop for professionals.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea",
+      "price": 1999.99,
+      "brand": "Apple",
+      "category_id": 1,
+      "subcategory_id": 12,
+      "image_url": "https://cdn.vox-cdn.com/thumbor/Dqu6WO-f2K-rqT0jMbPxkx_bzsA=/0x0:2040x1360/1000x1000/filters:focal(1020x680:1021x681)/cdn.vox-cdn.com/uploads/chorus_asset/file/25052490/236896_MacBook_Pro_14_and_16_M3_AKrales_0121.jpg",
+      "colors": [
+        {
+          "name": "Rose Gold",
+          "code": "#f4cccc"
+        },
+        {
+          "name": "Silver",
+          "code": "#c0c0c0"
+        }
+      ]
+    },
+    {
+      "id": "1003",
+      "name": "Canon EOS R5",
+      "description": "High resolution mirrorless camera.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea",
+      "price": 3899.99,
+      "brand": "Canon",
+      "category_id": 1,
+      "subcategory_id": 13,
+      "image_url": "https://amateurphotographer.com/wp-content/uploads/sites/7/2023/08/2023-Inductee-Canon-EOS-5D-Mark-IV-web.jpg",
+      "colors": [
+        {
+          "name": "White",
+          "code": "#ffffff"
+        },
+        {
+          "name": "Black",
+          "code": "#000000"
+        }
+      ]
+    },
+    {
+      "id": "2001",
+      "name": "Zara LINEN BLEND MIDI DRESS",
+      "description": "Comfortable and stylish summer dress.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea",
+      "price": 49.99,
+      "brand": "Zara",
+      "category_id": 2,
+      "subcategory_id": 21,
+      "image_url": "https://static.zara.net/assets/public/ff40/d4fa/1f464149abae/571fb075c0ac/03314354800-p/03314354800-p.jpg?ts=1714036549781&w=824",
+      "discount": 20,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "colors": [
+        {
+          "name": "White",
+          "code": "#ffffff"
+        },
+        {
+          "name": "Black",
+          "code": "#000000"
+        },
+        {
+          "name": "Red",
+          "code": "#ac0c06"
+        }
+      ]
+    },
+    {
+      "id": "2002",
+      "name": "Zara Floral Appliqué Crop Top",
+      "description": "Find many great new & used options and get the best deals for Zara Black Floral Appliqué Crop Top Tube Flower Strap Raised Rosette S #z at the best",
+      "price": 29.99,
+      "brand": "Zara",
+      "category_id": 2,
+      "subcategory_id": 21,
+      "image_url": "https://static.zara.net/assets/public/e9a5/8696/bbe34d5588fd/f0a6b8438865/02782031250-15-a1/02782031250-15-a1.jpg?ts=1710940267189",
+      "sizes": [
+        "S",
+        "M",
+        "L"
+      ],
+      "colors": [
+        {
+          "name": "White",
+          "code": "#ffffff"
+        },
+        {
+          "name": "Black",
+          "code": "#000000"
+        }
+      ]
+    },
+    {
+      "id": "2003",
+      "name": "Zara LONG PRINTED SKIRT",
+      "description": "Find many great new & used options and get the best deals for Zara Black Floral Appliqué Crop Top Tube Flower Strap Raised Rosette S #z at the best",
+      "price": 37.99,
+      "brand": "Zara",
+      "category_id": 2,
+      "subcategory_id": 21,
+      "image_url": "https://static.zara.net/assets/public/0673/bc32/dd2a4f4381fc/04cc1f4ce1be/07261850330-p/07261850330-p.jpg?ts=1703672463514&w=824",
+      "sizes": [
+        "S",
+        "M",
+        "L"
+      ],
+      "colors": [
+        {
+          "name": "White",
+          "code": "#ffffff"
+        },
+        {
+          "name": "Yellow",
+          "code": "#ffffba"
+        }
+      ]
+    },
+    {
+      "id": "2010",
+      "name": "LOUIS VUITTON  Leather Handbag",
+      "description": "Elegant leather handbag for women.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea",
+      "price": 3999.99,
+      "brand": "Louis Vuitton",
+      "category_id": 2,
+      "subcategory_id": 22,
+      "image_url": "https://us.louisvuitton.com/content/dam/lv/online/high-end/women/handbags/W_Fa_GO14_LP_V2.html/jcr:content/assets/savoir-faire/02_LV_GO14_1365_LVCOM_2000x2000_DI2.jpg",
+      "colors": [
+        {
+          "name": "Black",
+          "code": "#000000"
+        },
+        {
+          "name": "Brown",
+          "code": "#8b4513"
+        },
+        {
+          "name": "Beige",
+          "code": "#f5f5dc"
+        }
+      ]
+    },
+    {
+      "id": "2011",
+      "name": "Dior Tote Bag",
+      "description": "Elegant leather handbag for women.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea",
+      "price": 3949.99,
+      "brand": "Dior",
+      "category_id": 2,
+      "subcategory_id": 22,
+      "image_url": "https://www.dior.com/couture/var/dior/storage/images/pushs-editos/folder-summer-24-femme/folder-w2-digital/m1296zompm76e/42569853-2-eng-GB/m1296zompm76e_1440_1200.jpg?imwidth=3000",
+      "colors": [
+        {
+          "name": "White",
+          "code": "#ffffff"
+        }
+      ]
+    },
+    {
+      "id": "2012",
+      "name": "Dior Tote Bags & Beach Bags for Women",
+      "description": "Elegant leather handbag for women.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea",
+      "price": 3500,
+      "brand": "Dior",
+      "category_id": 2,
+      "subcategory_id": 22,
+      "image_url": "https://www.fluxurymagazine.com/wp-content/uploads/2023/09/01-1-1024x683.jpg",
+      "colors": [
+        {
+          "name": "White",
+          "code": "#ffffff"
+        },
+        {
+          "name": "Black",
+          "code": "#000000"
+        },
+        {
+          "name": "Yellow",
+          "code": "#ffffba"
+        }
+      ]
+    },
+    {
+      "id": "2020",
+      "name": "Elegant Bridal Wedding Dress Shoes",
+      "description": "Stylish high heel shoes for women.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea",
+      "price": 89.99,
+      "category_id": 2,
+      "subcategory_id": 23,
+      "image_url": "https://img4.dhresource.com/webp/m/0x0/f3/albu/km/n/12/e2204931-1097-479f-8419-e39fec9a0285.jpg",
+      "brand": "H&M",
+      "discount": 10,
+      "sizes": [
+        "M"
+      ],
+      "colors": [
+        {
+          "name": "White",
+          "code": "#ffffff"
+        },
+        {
+          "name": "Ivory",
+          "code": "#fffff0"
+        }
+      ]
+    },
+    {
+      "id": "2041",
+      "name": "Coca Cola",
+      "description": "Classic soft drink..Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea",
+      "price": 1.99,
+      "brand": "Coca Cola",
+      "category_id": 12,
+      "subcategory_id": 101,
+      "image_url": "https://www.simplilearn.com/ice9/free_resources_article_thumb/Coca_Cola_Marketing_Strategy_2022.jpg",
+      "discount": 30
+    },
+    {
+      "id": "2042",
+      "name": "Orange Juice",
+      "description": "Freshly squeezed orange juice..Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea",
+      "price": 3.49,
+      "brand": "Tropicana",
+      "category_id": 12,
+      "subcategory_id": 101,
+      "image_url": "https://images.squarespace-cdn.com/content/v1/62e7a92f066fa3730dcd4604/a7d00a84-5400-4ebf-a259-08bb13f34a2f/v2-8hxnp-engqb.jpg"
+    },
+    {
+      "id": "2043",
+      "name": "Potato Chips",
+      "description": "Crispy salted potato chips..Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea",
+      "price": 2.49,
+      "brand": "Lays",
+      "category_id": 12,
+      "subcategory_id": 102,
+      "image_url": "https://www.marketing91.com/wp-content/uploads/2019/04/Marketing-Strategy-of-Lays-4.jpg"
+    },
+    {
+      "id": "2044",
+      "name": "Chocolate Cookies",
+      "description": "Delicious chocolate chip cookies..Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea",
+      "price": 4.99,
+      "brand": "Chips Ahoy!",
+      "category_id": 12,
+      "subcategory_id": 102,
+      "image_url": "https://www.eatthis.com/wp-content/uploads/sites/4/2024/03/chips-ahoy-new-cookie-recipe.jpg?quality=82&strip=1"
+    },
+    {
+      "id": "3001",
+      "name": "H&M Baggy Jeans",
+      "description": "Elegant plaid suit for men..Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea",
+      "price": 199.99,
+      "brand": "H&M",
+      "category_id": 3,
+      "subcategory_id": 24,
+      "image_url": "https://www2.hm.com/content/dam/global_campaigns/season_00/men/ms30tnd-denim/MS30TND-Denim-roundup-1x1.jpg",
+      "discount": 15,
+      "sizes": [
+        "S",
+        "L",
+        "XL"
+      ],
+      "colors": [
+        {
+          "name": "Blue",
+          "code": "#003366"
+        },
+        {
+          "name": "Black",
+          "code": "#000000"
+        }
+      ]
+    },
+    {
+      "id": "3002",
+      "name": "Nike Killshot OG Black White DC1982-001",
+      "description": "Stylish sneaker for men..Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea",
+      "price": 129.99,
+      "brand": "Nike",
+      "category_id": 3,
+      "subcategory_id": 25,
+      "image_url": "https://static.nike.com/a/images/f_auto/dpr_3.0,cs_srgb/w_363,c_limit/435b9e4b-cd7a-4cf9-adae-bba8723bda34/check-out-the-best-black-sneaker-styles-by-nike.jpg",
+      "sizes": [
+        "S",
+        "M"
+      ],
+      "colors": [
+        {
+          "name": "Black",
+          "code": "#000000"
+        },
+        {
+          "name": "White",
+          "code": "#ffffff"
+        }
+      ]
+    },
+    {
+      "id": "3501",
+      "name": "Hydrating Natural Face Serum | Rocky Mountain Soap Company",
+      "description": "A deeply hydrating serum enriched with vitamins and antioxidants for radiant skin..Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim ",
+      "price": 29.99,
+      "brand": "Rocky",
+      "image_url": "https://www.rockymountainsoap.com/cdn/shop/products/Review-Serum-Web_12c0485e-96b2-4f51-96b0-a1edfbe549a5_1200x.jpg?v=1698447125",
+      "category_id": 8,
+      "subcategory_id": 61
+    },
+    {
+      "id": "3502",
+      "name": "Equate Fragrance Free Daily Moisturizing Lotion, 33 fl. oz.",
+      "description": "Moisturizer with SPF 30 for everyday sun protection and hydration.",
+      "price": 19.99,
+      "image_url": "https://i5.walmartimages.com/asr/4cc48632-c44e-49e0-978f-b9ed4ad3f218.1607fe738708fd9aee2a9e2cdb75f2cb.jpeg?odnHeight=768&odnWidth=768&odnBg=FFFFFF",
+      "brand": "Rocky",
+      "category_id": 8,
+      "subcategory_id": 61
+    },
+    {
+      "id": "3503",
+      "name": "Dior Addict Shine Lacquer Lipstick 16gr Lip Glow Lip",
+      "description": "Long-lasting matte lipstick in vibrant ruby red shade.",
+      "price": 14.99,
+      "image_url": "https://images.tokopedia.net/img/cache/700/hDjmkQ/2023/12/24/4500d0cb-074a-4c83-8c81-a2903d239494.jpg",
+      "brand": "Dior",
+      "category_id": 8,
+      "subcategory_id": 62,
+      "colors": [
+        {
+          "name": "Red",
+          "code": "#ac0c06"
+        },
+        {
+          "name": "Rose Gold",
+          "code": "#f4cccc"
+        },
+        {
+          "name": "Orange",
+          "code": "#bc4704"
+        }
+      ]
+    },
+    {
+      "id": "3504",
+      "name": "3CE New Take Eyeshadow Palette 3 Types",
+      "description": "A palette of highly pigmented eyeshadows in versatile shades for any occasion.",
+      "price": 32.99,
+      "brand": "3CE",
+      "image_url": "https://beautykoreadubai.com/cdn/shop/products/210b23861fb771e7e33bad617a5ee71a_1024x1024.jpg?v=1660124813",
+      "category_id": 8,
+      "subcategory_id": 62,
+      "colors": [
+        {
+          "name": "Orange",
+          "code": "#bc4704"
+        },
+        {
+          "name": "Brown",
+          "code": "#8b4513"
+        }
+      ]
+    },
+    {
+      "id": "3505",
+      "name": "Dior Forever: Meet The New and Improved Foundation By Dior",
+      "description": "Liquid foundation with medium coverage for a flawless complexion.",
+      "price": 32.99,
+      "image_url": "https://cdn.tatlerasia.com/tatlerasia/i/2022/04/06172835-screenshot-2022-04-06-at-52831-pm_cover_870x1084.png",
+      "brand": "Dior",
+      "category_id": 8,
+      "subcategory_id": 62,
+      "colors": [
+        {
+          "name": "Brown",
+          "code": "#8b4513"
+        },
+        {
+          "name": "Beige",
+          "code": "#f5f5dc"
+        },
+        {
+          "name": "Ivory",
+          "code": "#fffff0"
+        }
+      ]
+    },
+    {
+      "id": "4001",
+      "name": "Zara Boy T-Shirt",
+      "description": "Comfortable and colorful t-shirt for kids..Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea",
+      "price": 19.99,
+      "brand": "Zara",
+      "category_id": 4,
+      "subcategory_id": 26,
+      "image_url": "https://static.zara.net/assets/public/2798/758f/ef234d1fa5ad/bc20930ea2b4/04805569406-400-p/04805569406-400-p.jpg?ts=1716216722803&w=824"
+    },
+    {
+      "id": "4002",
+      "name": "Pigeon 3-in-1 Baby Wash",
+      "description": "Gentle shampoo for babies..Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea",
+      "price": 9.99,
+      "brand": "Pigeon",
+      "category_id": 4,
+      "subcategory_id": 27,
+      "image_url": "https://183930.selcdn.ru/media/thumbnails/85/58/85587ee7c5491cdffe1103bcbedf9a31.jpg",
+      "discount": 30
+    },
+    {
+      "id": "4003",
+      "name": "Pigeon Softouch PPSU Wide Neck Baby Feeding",
+      "description": "Durable and safe feeding bottle for babies..Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea",
+      "price": 12.99,
+      "brand": "Pigeon",
+      "category_id": 4,
+      "subcategory_id": 28,
+      "image_url": "https://i.ebayimg.com/images/g/~jcAAOSwbNJjUPze/s-l1200.jpg"
+    },
+    {
+      "id": "5001",
+      "name": "Homfa Chenille Sofa and Couch",
+      "description": "Comfortable and stylish sofa for your living room..Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea",
+      "price": 499.99,
+      "brand": "Sweety Home",
+      "category_id": 5,
+      "subcategory_id": 31,
+      "image_url": "https://i5.walmartimages.com/seo/Homfa-Chenille-Sofa-and-Couch-77-2-Modern-Couch-with-Armrests-Wood-Sofa-with-Pocket-and-Stainless-Steel-Legs-Grey_348ded6d-a91c-41fe-911a-e60ccf6ef6aa.63c30e5fa82183bf106c86b52fe1fb11.jpeg"
+    },
+    {
+      "id": "5002",
+      "name": "Kitchen Blender",
+      "description": "High-performance blender for all your kitchen needs..Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea",
+      "price": 79.99,
+      "brand": "Sweety Home",
+      "category_id": 5,
+      "subcategory_id": 32,
+      "image_url": "https://www.allrecipes.com/thmb/nsnEC24bEWFWetPiDMZLkCNIbIA=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/alr-product-19-vitamix-5200-blender-rkilgore-1273-7893ed177d074c65abcbf739459a7ace.jpeg"
+    },
+    {
+      "id": "5003",
+      "name": "Wall Decor",
+      "description": "Beautiful wall decor to enhance your home..Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea",
+      "price": 39.99,
+      "brand": "Sweety Home",
+      "category_id": 5,
+      "subcategory_id": 33,
+      "image_url": "https://rukminim2.flixcart.com/image/850/1000/ky1vl3k0/wall-decoration/u/t/v/macrame-wall-hanging-shelf-wood-floating-1-onedeepwh012s-home-original-imagad6etqczrdst.jpeg?q=90&crop=false"
+    },
+    {
+      "id": "6001",
+      "name": "The Code Girl From London Fictional Novel",
+      "description": "Engaging and thrilling fictional novel..Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea",
+      "price": 14.99,
+      "brand": "Yangon Book Store",
+      "category_id": 6,
+      "subcategory_id": 41,
+      "image_url": "https://images-na.ssl-images-amazon.com/images/I/91CdklZOKvL._AC_UL330_SR330,330_.jpg",
+      "discount": 10
+    },
+    {
+      "id": "6002",
+      "name": "The Autobiography of Benjamin Franklin",
+      "description": "Inspirational self-help book for personal growth..Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea",
+      "price": 19.99,
+      "brand": "Yangon Book Store",
+      "category_id": 6,
+      "subcategory_id": 42,
+      "image_url": "https://rukminim2.flixcart.com/image/850/1000/kgqvlow0/book/3/6/0/the-autobiography-of-benjamin-franklin-original-imafwwuxtmzjggrd.jpeg?q=90&crop=false"
+    },
+    {
+      "id": "6003",
+      "name": "The Story of a Book",
+      "description": "Fun and educational storybook for children..Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea",
+      "price": 9.99,
+      "brand": "Yangon Book Store",
+      "category_id": 6,
+      "subcategory_id": 43,
+      "image_url": "https://images.booksense.com/images/851/903/9781665903851.jpg"
+    },
+    {
+      "id": "7001",
+      "name": "Nike Premier League 21/22 Flight Football White Life Style Sports",
+      "description": "High-quality football for sports enthusiasts..Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea",
+      "price": 29.99,
+      "brand": "Nike",
+      "category_id": 7,
+      "subcategory_id": 51,
+      "image_url": "https://mir-s3-cdn-cf.behance.net/project_modules/2800_opt_1/954cf8121656395.60ccc364b5973.jpg"
+    },
+    {
+      "id": "7002",
+      "name": "Yoga Mats, Natural & GOTS Organic Certified",
+      "description": "Durable and comfortable yoga mat..Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea",
+      "price": 19.99,
+      "brand": "Vermont",
+      "category_id": 7,
+      "subcategory_id": 51,
+      "image_url": "https://www.brentwoodhome.com/cdn/shop/products/yogamat-colors_1400x.jpg?v=1619739417"
+    },
+    {
+      "id": "7003",
+      "name": "Vermont Tennis Racket & Ball Set",
+      "description": "High-performance tennis racket for all levels..Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea",
+      "price": 79.99,
+      "brand": "Vermont",
+      "category_id": 7,
+      "subcategory_id": 53,
+      "image_url": "https://nwscdn.com/media/catalog/product/cache/all/thumbnail/800x/0dc2d03fe217f8c83829496872af24a0/r/a/racket-set_1.jpg",
+      "discount": 20
+    },
+    {
+      "id": "8001",
+      "name": "Trek Bicycle",
+      "description": "Durable and lightweight bicycle for all terrains..Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea",
+      "price": 249.99,
+      "brand": "Trek",
+      "category_id": 7,
+      "subcategory_id": 52,
+      "image_url": "https://trek.scene7.com/is/image/TrekBicycleProducts/Marlin5_21_33136_B_Portrait?$responsive-pjpg$&wid=1920&hei=1440"
+    },
+    {
+      "id": "8002",
+      "name": "Electric Scooter",
+      "description": "Eco-friendly electric scooter for urban commuting..Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea",
+      "price": 399.99,
+      "brand": "Trek",
+      "category_id": 7,
+      "subcategory_id": 52,
+      "image_url": "https://www.electricdrift.com.au/cdn/shop/products/xiaomi-riding-scooters-pre-order-xiaomi-mi-electric-scooter-essential-31605794341049_1300x.jpg?v=1642428541"
+    },
+    {
+      "id": "8003",
+      "name": "27Pcs Car Detailing Kit, Car Detailing Brush Set",
+      "description": "Complete kit for car maintenance and accessories..Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea",
+      "price": 89.99,
+      "brand": "Sweety Home",
+      "category_id": 8,
+      "subcategory_id": 63,
+      "image_url": "https://m.media-amazon.com/images/I/71a7eb9ATKL._AC_UF894,1000_QL80_.jpg"
+    },
+    {
+      "id": "9001",
+      "name": "Google Smart TV",
+      "description": "High-definition smart TV with streaming capabilities..Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea",
+      "price": 799.99,
+      "brand": "Google",
+      "category_id": 1,
+      "subcategory_id": 14,
+      "image_url": "https://www.smarttech-tv.com/image/catalog/home_banner/HomePage01_GTV.jpg",
+      "discount": 10
+    },
+    {
+      "id": "9002",
+      "name": "Buy ZEBRONICS zeb- thump 28 W Bluetooth",
+      "description": "Portable Bluetooth speaker with excellent sound quality..Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea",
+      "price": 59.99,
+      "brand": "Google",
+      "category_id": 1,
+      "subcategory_id": 15,
+      "image_url": "https://rukminim2.flixcart.com/image/850/1000/k5si2kw0/speaker/home-theatre/d/r/j/zebronics-wired-mic-bt-aux-fm-led-display-rgb-lights-and-remote-original-imafzedejzhtjhjx.jpeg?q=20&crop=false"
+    },
+    {
+      "id": "10001",
+      "name": "Plant Pots",
+      "description": "Beautiful plant pots for your garden..Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea",
+      "price": 29.99,
+      "brand": "Sweety Home",
+      "category_id": 10,
+      "subcategory_id": 81,
+      "image_url": "https://stylegarage.com/cdn/shop/products/100130629_4_1570715206_1800x_a9e56d6c-3773-4256-b3ff-bcd944b00320_530x@2x.webp?v=1663364556"
+    },
+    {
+      "id": "10002",
+      "name": "Outdoor Charcoal Grill with Offset Smoker ",
+      "description": "High-performance outdoor grill for your backyard..Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercit",
+      "price": 299.99,
+      "brand": "Sweety Home",
+      "category_id": 10,
+      "subcategory_id": 82,
+      "image_url": "https://m.media-amazon.com/images/I/71C-M--fp+L.jpg"
+    }
+  ],
+  "brands": [
+    {
+      "id": "b1",
+      "name": "Apple",
+      "description": "Leading innovator in consumer electronics, software, and online services.",
+      "logo_url": "https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg"
+    },
+    {
+      "id": "b2",
+      "name": "Canon",
+      "description": "Global leader in imaging and optical products.",
+      "logo_url": "https://yt3.googleusercontent.com/ytc/AIdro_k1UwVemFKH3QrqjgQU9X0EKaHWRtaU7Pa461UBQWbCoJc=s900-c-k-c0x00ffffff-no-rj"
+    },
+    {
+      "id": "b3",
+      "name": "Louis Vuitton",
+      "description": "Luxury fashion house and company.",
+      "logo_url": "https://i0.wp.com/brandriddle.com/wp-content/uploads/2019/02/il_570xN.1209702977_kc4w-570x445-1.jpg?fit=800%2C445&ssl=1"
+    },
+    {
+      "id": "b4",
+      "name": "H&M",
+      "description": "International clothing retail company.",
+      "logo_url": "https://upload.wikimedia.org/wikipedia/commons/5/53/H%26M-Logo.svg"
+    },
+    {
+      "id": "b5",
+      "name": "Nike",
+      "description": "Leading supplier of athletic shoes, apparel, and sports equipment.",
+      "logo_url": "https://upload.wikimedia.org/wikipedia/commons/a/a6/Logo_NIKE.svg"
+    },
+    {
+      "id": "b6",
+      "name": "Rocky",
+      "description": "Popular skincare brand known for its effective products.",
+      "logo_url": "https://rockymountainskincareclinic.com/wp-content/uploads/rocky-mountain-skin-care-clinic-icon.png"
+    },
+    {
+      "id": "b7",
+      "name": "Dior",
+      "description": "Luxury goods company known for its fashion, fragrances, and accessories.",
+      "logo_url": "https://1000logos.net/wp-content/uploads/2020/01/Dior-Logo.png"
+    },
+    {
+      "id": "b8",
+      "name": "3CE",
+      "description": "Trendy makeup brand popular among young consumers.",
+      "logo_url": "https://tukuz.com/wp-content/uploads/2020/05/3ce-stylenanda-logo-vector.png"
+    },
+    {
+      "id": "b9",
+      "name": "Zara",
+      "description": "International fast fashion retailer.",
+      "logo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Zara_Logo.svg/1280px-Zara_Logo.svg.png"
+    },
+    {
+      "id": "b10",
+      "name": "Pigeon",
+      "description": "Trusted brand for baby and mother care products.",
+      "logo_url": "https://logowik.com/content/uploads/images/pigeon6167.logowik.com.webp"
+    },
+    {
+      "id": "b11",
+      "name": "Sweety Home",
+      "description": "Popular Myanmar brand for household products.",
+      "logo_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyibbp5_kO6tSWjdldNTOZpxQbKDQf30-Qlw&s"
+    },
+    {
+      "id": "b12",
+      "name": "Yangon Book Store",
+      "description": "Well-known bookstore in Myanmar.",
+      "logo_url": "https://s.tmimgcdn.com/scr/1200x750/242600/book-shop-modern-logo-template_242604-original.jpg"
+    },
+    {
+      "id": "b13",
+      "name": "Trek",
+      "description": "Leading brand for bicycles and cycling products.",
+      "logo_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/2018_Trek_logo_word_mark_wiki_buffer.svg/2560px-2018_Trek_logo_word_mark_wiki_buffer.svg.png"
+    },
+    {
+      "id": "b14",
+      "name": "Vermont",
+      "description": "Brand known for its quality outdoor and adventure gear.",
+      "logo_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8PF9bwx6PmZYG8IeZ8DCHHHC-lE8pNQ68Cg&s"
+    },
+    {
+      "id": "b15",
+      "name": "Google",
+      "description": "Global technology leader, also known for its TV and electronic products.",
+      "logo_url": "https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg"
+    },
+    {
+      "id": "b16",
+      "name": "Coca Cola",
+      "description": "Leading global beverage company known for its iconic soft drinks.",
+      "logo_url": "https://1000logos.net/wp-content/uploads/2021/05/Coca-Cola-logo.png"
+    },
+    {
+      "id": "b17",
+      "name": "Tropicana",
+      "description": "Well-known brand offering a variety of fruit juices and beverages.",
+      "logo_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTF896DJmbIYpLAqMf66M7t109qoETg4SQkGWchjhuapSsf2tEM9bD5yWF9jGLkInC9ufY&usqp=CAU"
+    },
+    {
+      "id": "b18",
+      "name": "Lays",
+      "description": "Famous brand of potato chips and other snack foods.",
+      "logo_url": "https://1000logos.net/wp-content/uploads/2020/06/Lays-Logo.png"
+    },
+    {
+      "id": "b19",
+      "name": "Chips Ahoy!",
+      "description": "Popular brand of chocolate chip cookies and other baked goods.",
+      "logo_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMGznySMFHLKjaCtOhICtoYFBXVb8wc6B6kQ&s"
+    }
+  ]
+}

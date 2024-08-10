@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.button {
+  position: relative;
+  overflow: hidden;
+  background-color: white;
+  border: 1px solid black;
+}
+
+.button:hover .bg-black {
+  transform: translateX(100%);
+  border-radius: 60px;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
