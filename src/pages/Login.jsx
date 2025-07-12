@@ -24,7 +24,8 @@ const Login = () => {
     const { email, password } = formData;
 
     try {
-      const response = await axios.get("http://localhost:3001/users");
+      // const response = await axios.get("http://localhost:3001/users");
+      const response = await axios.get("https://buy-now-jocc.onrender.com/users");
       const users = response.data;
 
       const user = users.find(

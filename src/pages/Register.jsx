@@ -32,7 +32,12 @@ const Register = () => {
     }
 
     try {
-      const response = await axios.post("http://localhost:3001/users", {
+      // const response = await axios.post("http://localhost:3001/users", {
+      //   username,
+      //   email,
+      //   password,
+      // });
+      const response = await axios.post("https://buy-now-jocc.onrender.com/users", {
         username,
         email,
         password,
