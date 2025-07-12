@@ -20,7 +20,8 @@ const Home = () => {
     const sortedProducts = products.sort((a, b) => getOrderCount(b.id) - getOrderCount(a.id));
 
     useEffect(() => {
-        axios.get('http://localhost:3001/categories')
+        // axios.get('http://localhost:3001/categories')
+        axios.get('https://buy-now-jocc.onrender.com/categories')
             .then(response => {
                 setCategories(response.data);
             })
@@ -30,7 +31,8 @@ const Home = () => {
     }, []);
 
     useEffect(() => {
-        axios.get('http://localhost:3001/products')
+        // axios.get('http://localhost:3001/products')
+        axios.get('https://buy-now-jocc.onrender.com/products')
             .then(response => {
                 setProducts(response.data);
             })

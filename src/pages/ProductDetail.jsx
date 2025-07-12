@@ -27,8 +27,8 @@ const ProductDetail = () => {
   const [rating, setRating] = useState(1);
 
   useEffect(() => {
-    axios
-      .get(`http://localhost:3001/products/${id}`)
+    // axios.get(`http://localhost:3001/products/${id}`)
+    axios.get('https://buy-now-jocc.onrender.com/products/${id}')
       .then((response) => {
         setProduct(response.data);
         setLoading(false);

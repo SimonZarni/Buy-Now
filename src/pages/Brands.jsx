@@ -6,7 +6,8 @@ const Brands = () => {
     const [brands, setBrands] = useState([]);
 
     useEffect(() => {
-        axios.get('http://localhost:3001/brands')
+        // axios.get('http://localhost:3001/brands')
+        axios.get('https://buy-now-jocc.onrender.com/brands')
             .then(response => {
                 setBrands(response.data);
             })

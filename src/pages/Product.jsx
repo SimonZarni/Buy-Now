@@ -30,11 +30,13 @@ const Product = () => {
     });
 
     useEffect(() => {
-        axios.get('http://localhost:3001/products')
+        // axios.get('http://localhost:3001/products')
+        axios.get('https://buy-now-jocc.onrender.com/products')
             .then(response => setProducts(response.data))
             .catch(error => console.error("Error fetching data: ", error));
 
-        axios.get('http://localhost:3001/categories')
+        // axios.get('http://localhost:3001/categories')
+        axios.get('https://buy-now-jocc.onrender.com/categories')
             .then(response => {
                 setCategories(response.data);
                 const allSubcategories = response.data.flatMap(category => category.subcategories);
@@ -43,7 +45,8 @@ const Product = () => {
             .catch(error => console.error("Error fetching categories: ", error));
 
 
-        axios.get('http://localhost:3001/brands')
+        // axios.get('http://localhost:3001/brands')
+        axios.get('https://buy-now-jocc.onrender.com/brands')
             .then(response => setBrands(response.data))
             .catch(error => console.error("Error fetching data: ", error));
     }, []);
