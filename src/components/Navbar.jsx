@@ -47,7 +47,8 @@ const Navbar = () => {
     const navigate = useNavigate()
 
     useEffect(() => {
-        axios.get('http://localhost:3001/categories')
+        // axios.get('http://localhost:3001/categories')
+        axios.get('https://buy-now-jocc.onrender.com/categories')
             .then(response => {
                 setCategories(response.data)
             })
