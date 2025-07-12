@@ -89,7 +89,8 @@ const Checkout = () => {
     };
 
     try {
-      await axios.post("http://localhost:3001/orders", order);
+      // await axios.post("http://localhost:3001/orders", order);
+      await axios.post("https://buy-now-jocc.onrender.com/orders", order);
 
       clearCart();
       navigate("/products");
