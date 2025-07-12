@@ -55,43 +55,6 @@ const Favorites = () => {
         }
     };
 
-    // return (
-    //     <div className="container mx-auto p-8">
-    //         <h1 className="text-2xl font-bold mb-6 uppercase mx-2">Favorite Products</h1>
-    //         {favorites.length > 0 ? (
-    //             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-7">
-    //                 {favorites.map(product => {
-    //                     const discountedPrice = product.discount
-    //                         ? product.price - (product.price * product.discount / 100)
-    //                         : product.price;
-
-    //                     return (
-    //                         <Link to={`/products/${product.id}`} key={product.id}>
-    //                             <Card
-    //                                 img={product.image_url}
-    //                                 name={product.name}
-    //                                 description={product.description}
-    //                                 price={product.price}
-    //                                 colors={product.colors}
-    //                                 sizes={product.sizes}
-    //                                 discount={product.discount}
-    //                                 discountedPrice={discountedPrice}
-    //                             />
-    //                         </Link>
-    //                     );
-    //                 })}
-    //             </div>
-    //         ) : (
-    //             <div className='flex justify-center items-center h-full'>
-    //                 <div>
-    //                     <img src="images/no_favourite.png" className='w-2/3 mx-auto' alt="No favorite products" />
-    //                     <p className="text-center">No favorite products found.</p>
-    //                 </div>
-    //             </div>
-    //         )}
-    //     </div>
-    // );
-
     return (
         <div className="container mx-auto p-8">
             <div className="breadcrumbs text-sm mb-2 mx-3">
