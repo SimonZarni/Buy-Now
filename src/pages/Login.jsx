@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import Button from "../components/Button";
+import API_ENDPOINTS from "../config/api";
+import { setStorageItem, STORAGE_KEYS } from "../utils/storage";
+import { isValidEmail } from "../utils/validation";
 
 const Login = () => {
   const [formData, setFormData] = useState({
@@ -23,17 +26,26 @@ const Login = () => {
     e.preventDefault();
     const { email, password } = formData;
 
+    if (!email || !password) {
+      setErrorMessage("Please fill in all fields.");
+      return;
+    }
+
+    if (!isValidEmail(email)) {
+      setErrorMessage("Please enter a valid email address.");
+      return;
+    }
+
     try {
-      // const response = await axios.get("http://localhost:3001/users");
-      const response = await axios.get("https://buy-now-jocc.onrender.com/users");
-      const users = response.data;
+      const response = await axios.get(API_ENDPOINTS.USERS);
+      const users = Array.isArray(response.data) ? response.data : [];
 
       const user = users.find(
         (user) => user.email === email && user.password === password
       );
 
       if (user) {
-        localStorage.setItem("user", JSON.stringify(user));
+        setStorageItem(STORAGE_KEYS.USER, user);
         navigate("/");
         window.location.reload();
       } else {

@@ -4,6 +4,9 @@ import CartContext from "../CartContext";
 import axios from "axios";
 import Button from "../components/Button";
 import { Link } from "react-router-dom";
+import API_ENDPOINTS from "../config/api";
+import { getCurrentUser } from "../utils/storage";
+import { isUserLoggedIn } from "../utils/validation";
 
 const Checkout = () => {
   const location = useLocation();
@@ -24,8 +27,7 @@ const Checkout = () => {
     cvc: "",
   });
 
-  const user = JSON.parse(localStorage.getItem("user"));
-
+  const user = getCurrentUser();
   const { clearCart } = useContext(CartContext);
 
   const [orderNumber, setOrderNumber] = useState(
@@ -52,7 +54,7 @@ const Checkout = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (!user) {
+    if (!isUserLoggedIn() || !user) {
       alert("You need to be logged in to place an order.");
       return;
     }
@@ -89,12 +91,10 @@ const Checkout = () => {
     };
 
     try {
-      // await axios.post("http://localhost:3001/orders", order);
-      await axios.post("https://buy-now-jocc.onrender.com/orders", order);
-
+      await axios.post(API_ENDPOINTS.ORDERS, order);
       clearCart();
       navigate("/products");
-      alert("Order Successfully");
+      alert("Order placed successfully!");
     } catch (error) {
       console.error("Error placing order:", error);
       alert("Failed to place order. Please try again.");

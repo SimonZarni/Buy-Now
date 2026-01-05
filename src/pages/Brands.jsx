@@ -1,19 +1,22 @@
 import React, { useState, useEffect } from "react";
 import axios from 'axios';
 import { Link } from "react-router-dom";
+import API_ENDPOINTS from "../config/api";
 
 const Brands = () => {
     const [brands, setBrands] = useState([]);
 
     useEffect(() => {
-        // axios.get('http://localhost:3001/brands')
-        axios.get('https://buy-now-jocc.onrender.com/brands')
-            .then(response => {
-                setBrands(response.data);
-            })
-            .catch(error => {
+        const fetchBrands = async () => {
+            try {
+                const response = await axios.get(API_ENDPOINTS.BRANDS);
+                setBrands(Array.isArray(response.data) ? response.data : []);
+            } catch (error) {
                 console.error("There was an error fetching the brands!", error);
-            });
+            }
+        };
+
+        fetchBrands();
     }, []);
 
     return (

@@ -1,80 +1,151 @@
+import PropTypes from 'prop-types';
 import ReviewContext from "./ReviewContext";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback, useMemo } from "react";
 import axios from 'axios';
+import API_ENDPOINTS from '../config/api';
 
 const ReviewProvider = ({ children }) => {
   const [reviews, setReviews] = useState([]);
   const [orders, setOrders] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
-    const fetchReviews = async () => {
+    const fetchData = async () => {
       try {
-        const response = await axios.get('http://localhost:3001/reviews');
-        setReviews(response.data);
-      } catch (error) {
-        console.error('Error fetching reviews:', error);
+        setLoading(true);
+        setError(null);
+        const [reviewsResponse, ordersResponse] = await Promise.all([
+          axios.get(API_ENDPOINTS.REVIEWS),
+          axios.get(API_ENDPOINTS.ORDERS),
+        ]);
+        setReviews(Array.isArray(reviewsResponse.data) ? reviewsResponse.data : []);
+        setOrders(Array.isArray(ordersResponse.data) ? ordersResponse.data : []);
+      } catch (err) {
+        console.error('Error fetching reviews/orders:', err);
+        setError('Failed to load reviews and orders');
+        // Set empty arrays on error to prevent crashes
+        setReviews([]);
+        setOrders([]);
+      } finally {
+        setLoading(false);
       }
     };
 
-    const fetchOrders = async () => {
-      try {
-        const response = await axios.get('http://localhost:3001/orders');
-        setOrders(response.data);
-      } catch (error) {
-        console.error('Error fetching orders:', error);
-      }
-    };
-
-    fetchReviews();
-    fetchOrders();
+    fetchData();
   }, []);
 
-  const addReview = async (newReview) => {
-    try {
-      const response = await axios.post('http://localhost:3001/reviews', newReview);
-      setReviews([...reviews, response.data]);
-    } catch (error) {
-      console.error('Error adding review:', error);
+  /**
+   * Add a new review
+   * @param {Object} newReview - Review object to add
+   * @returns {Promise<boolean>} - Success status
+   */
+  const addReview = useCallback(async (newReview) => {
+    if (!newReview || !newReview.productId || !newReview.rating) {
+      console.warn('Invalid review data provided');
+      return false;
     }
-  };
 
-  const getProductReviews = (productId) => {
-    return reviews.filter((review) => review.productId === productId);
-  };
+    try {
+      const response = await axios.post(API_ENDPOINTS.REVIEWS, newReview);
+      if (response.data) {
+        setReviews((prevReviews) => [...prevReviews, response.data]);
+        return true;
+      }
+      return false;
+    } catch (err) {
+      console.error('Error adding review:', err);
+      return false;
+    }
+  }, []);
 
-  const calculateRatingStats = (productId) => {
+  /**
+   * Get reviews for a specific product
+   * @param {string} productId - Product ID
+   * @returns {Array} - Array of reviews
+   */
+  const getProductReviews = useCallback((productId) => {
+    if (!productId) {
+      return [];
+    }
+    return reviews.filter((review) => String(review.productId) === String(productId));
+  }, [reviews]);
+
+  /**
+   * Calculate rating statistics for a product
+   * @param {string} productId - Product ID
+   * @returns {Object} - Rating stats object
+   */
+  const calculateRatingStats = useCallback((productId) => {
     const productReviews = getProductReviews(productId);
-    if (productReviews.length === 0)
-      return { averageRating: 0, ratingDistribution: {} };
+    
+    if (productReviews.length === 0) {
+      return { 
+        averageRating: 0, 
+        ratingDistribution: { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0 },
+        totalReviews: 0,
+      };
+    }
 
     let totalRating = 0;
-    let ratingDistribution = { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0 };
+    const ratingDistribution = { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0 };
 
     productReviews.forEach((review) => {
-      totalRating += review.rating;
-      ratingDistribution[review.rating] += 1;
+      const rating = parseInt(review.rating, 10);
+      if (rating >= 1 && rating <= 5) {
+        totalRating += rating;
+        ratingDistribution[rating] += 1;
+      }
     });
 
     const averageRating = totalRating / productReviews.length;
 
-    return { averageRating: parseFloat(averageRating.toFixed(1)), ratingDistribution };
-  };
+    return { 
+      averageRating: parseFloat(averageRating.toFixed(1)), 
+      ratingDistribution,
+      totalReviews: productReviews.length,
+    };
+  }, [getProductReviews]);
 
-  const getOrderCount = (productId) => {
+  /**
+   * Get total order count for a product
+   * @param {string} productId - Product ID
+   * @returns {number} - Total order count
+   */
+  const getOrderCount = useCallback((productId) => {
+    if (!productId) {
+      return 0;
+    }
+
     return orders.reduce((count, order) => {
+      if (!order.cartItems || !Array.isArray(order.cartItems)) {
+        return count;
+      }
       const productQuantity = order.cartItems
-        .filter(item => item.productId === productId)
-        .reduce((sum, item) => sum + item.quantity, 0);
+        .filter(item => String(item.productId) === String(productId))
+        .reduce((sum, item) => sum + (parseInt(item.quantity, 10) || 0), 0);
       return count + productQuantity;
     }, 0);
-  };
-  
+  }, [orders]);
+
+  const contextValue = useMemo(() => ({
+    addReview,
+    getProductReviews,
+    calculateRatingStats,
+    getOrderCount,
+    loading,
+    error,
+  }), [addReview, getProductReviews, calculateRatingStats, getOrderCount, loading, error]);
 
   return (
-    <ReviewContext.Provider value={{ addReview, getProductReviews, calculateRatingStats, getOrderCount }}>
+    <ReviewContext.Provider value={contextValue}>
       {children}
     </ReviewContext.Provider>
   );
+};
+
+ReviewProvider.propTypes = {
+  children: PropTypes.node.isRequired,
 };
 
 export default ReviewProvider;

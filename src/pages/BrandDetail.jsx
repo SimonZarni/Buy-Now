@@ -5,6 +5,7 @@ import { FaSearch, FaPlus } from "react-icons/fa";
 import Card from "../components/Card";
 import { Link } from "react-router-dom";
 import CartContext from "../CartContext";
+import API_ENDPOINTS from "../config/api";
 
 const BrandDetail = () => {
   const { id } = useParams();
@@ -15,26 +16,35 @@ const BrandDetail = () => {
 
 
   useEffect(() => {
-    // axios.get(`http://localhost:3001/brands/${id}`)
-    axios.get('https://buy-now-jocc.onrender.com/brands/${id}')
-      .then(response => {
+    if (!id) return;
+
+    const fetchBrand = async () => {
+      try {
+        const response = await axios.get(API_ENDPOINTS.BRAND_BY_ID(id));
         setBrand(response.data);
-      })
-      .catch(error => {
+      } catch (error) {
         console.error("There was an error fetching the brand details!", error);
-      });
+      }
+    };
+
+    fetchBrand();
   }, [id]);
 
   useEffect(() => {
-    // axios.get(`http://localhost:3001/products`)
-    axios.get('https://buy-now-jocc.onrender.com/products')
-      .then(response => {
-        const filteredProducts = response.data.filter(product => product.brand === brand?.name);
+    if (!brand?.name) return;
+
+    const fetchProducts = async () => {
+      try {
+        const response = await axios.get(API_ENDPOINTS.PRODUCTS);
+        const productsData = Array.isArray(response.data) ? response.data : [];
+        const filteredProducts = productsData.filter(product => product.brand === brand.name);
         setProducts(filteredProducts);
-      })
-      .catch(error => {
+      } catch (error) {
         console.error("There was an error fetching the products!", error);
-      });
+      }
+    };
+
+    fetchProducts();
   }, [brand]);
   const handleSearch = (e) => {
     setSearch(e.target.value);

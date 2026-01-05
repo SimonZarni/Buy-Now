@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useContext } from "react";
+import React, { useEffect, useState, useContext, useCallback } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import Button from "../components/Button";
@@ -8,12 +8,15 @@ import { FaHeart } from "react-icons/fa";
 import FavoriteContext from "../FavoriteContext";
 import ReviewContext from "../ReviewContext";
 import { Link } from "react-router-dom";
+import API_ENDPOINTS from "../config/api";
+import { getCurrentUser } from "../utils/storage";
+import { isUserLoggedIn } from "../utils/validation";
 
 const ProductDetail = () => {
   const { id } = useParams();
   const { addToCart, calculateDiscountedPrice } = useContext(CartContext);
   const { toggleFavorite, isFavorite: checkIsFavorite } = useContext(FavoriteContext);
-  const { getProductReviews, addReview, calculateRatingStats } = useContext(ReviewContext);
+  const { getProductReviews, calculateRatingStats } = useContext(ReviewContext);
   const [product, setProduct] = useState(null);
   const [selectedColor, setSelectedColor] = useState(null);
   const [selectedSize, setSelectedSize] = useState(null);
@@ -23,30 +26,47 @@ const ProductDetail = () => {
   const [alertType, setAlertType] = useState(null);
   const [isFavorite, setIsFavorite] = useState(false);
   const [reviews, setReviews] = useState([]);
-  const [reviewText, setReviewText] = useState("");
-  const [rating, setRating] = useState(1);
 
   useEffect(() => {
-    // axios.get(`http://localhost:3001/products/${id}`)
-    axios.get(`https://buy-now-jocc.onrender.com/products/${id}`)
-      .then((response) => {
-        setProduct(response.data);
+    const fetchProduct = async () => {
+      if (!id) {
+        setError("Invalid product ID");
         setLoading(false);
+        return;
+      }
+
+      try {
+        setLoading(true);
+        setError(null);
+        const response = await axios.get(API_ENDPOINTS.PRODUCT_BY_ID(id));
+        
+        if (!response.data) {
+          throw new Error("Product not found");
+        }
+
+        setProduct(response.data);
 
         const productReviews = getProductReviews(id);
         setReviews(productReviews);
 
-        const user = JSON.parse(localStorage.getItem("user"));
+        const user = getCurrentUser();
         if (user) {
           setIsFavorite(checkIsFavorite(response.data.id, user.id));
         }
-      })
-      .catch((error) => {
-        setError("Error fetching data: " + error.message);
+      } catch (err) {
+        console.error("Error fetching product:", err);
+        setError(err.response?.status === 404 
+          ? "Product not found" 
+          : "Failed to load product. Please try again later.");
+      } finally {
         setLoading(false);
-      });
+      }
+    };
+
+    fetchProduct();
   }, [id, getProductReviews, checkIsFavorite]);
 
+  // Auto-dismiss alert messages
   useEffect(() => {
     if (alertMessage) {
       const timer = setTimeout(() => {
@@ -58,61 +78,101 @@ const ProductDetail = () => {
     }
   }, [alertMessage]);
 
-  const handleAddToCart = () => {
-    console.log("Selected Color:", selectedColor);
-    console.log("Selected Size:", selectedSize);
+  /**
+   * Show alert message
+   * @param {string} message - Alert message
+   * @param {string} type - Alert type ('success' or 'error')
+   */
+  const showAlert = useCallback((message, type = "error") => {
+    setAlertMessage(message);
+    setAlertType(type);
+  }, []);
 
-    const user = JSON.parse(localStorage.getItem("user"));
-    if (!user) {
-      setAlertMessage("You must be logged in to add items to the cart.");
-      setAlertType("error");
+  /**
+   * Handle add to cart
+   */
+  const handleAddToCart = useCallback(() => {
+    if (!product) {
+      showAlert("Product information is not available.", "error");
       return;
     }
 
-    if (product.colors && !selectedColor) {
-      setAlertMessage("Please select a color.");
-      setAlertType("error");
+    if (!isUserLoggedIn()) {
+      showAlert("You must be logged in to add items to the cart.", "error");
       return;
     }
-    if (product.sizes && !selectedSize) {
-      setAlertMessage("Please select a size.");
-      setAlertType("error");
+
+    // Validate required selections
+    if (product.colors && product.colors.length > 0 && !selectedColor) {
+      showAlert("Please select a color.", "error");
       return;
     }
-    const productToAdd = { ...product, selectedColor, selectedSize };
+    if (product.sizes && product.sizes.length > 0 && !selectedSize) {
+      showAlert("Please select a size.", "error");
+      return;
+    }
+
     try {
+      const productToAdd = { ...product, selectedColor, selectedSize };
       addToCart(productToAdd);
-      setAlertMessage(
-        `Added ${product.name} to cart${selectedColor ? ` with color ${selectedColor.name}` : ""
-        }${selectedSize ? ` and size ${selectedSize}` : ""}.`
-      );
-      setAlertType("success");
+      
+      const colorText = selectedColor ? ` with color ${selectedColor.name}` : "";
+      const sizeText = selectedSize ? ` and size ${selectedSize}` : "";
+      showAlert(`Added ${product.name} to cart${colorText}${sizeText}.`, "success");
     } catch (err) {
-      setAlertMessage("Failed to add product to cart.");
-      setAlertType("error");
+      console.error("Error adding to cart:", err);
+      showAlert("Failed to add product to cart. Please try again.", "error");
     }
-  };
+  }, [product, selectedColor, selectedSize, addToCart, showAlert]);
 
-  const handleToggleFavorite = () => {
-    const user = JSON.parse(localStorage.getItem("user"));
-    if (!user) {
-      setAlertMessage(
-        "You must be logged in to add or remove items from favorites."
-      );
-      setAlertType("error");
+  /**
+   * Handle toggle favorite
+   */
+  const handleToggleFavorite = useCallback(() => {
+    if (!product) {
+      showAlert("Product information is not available.", "error");
       return;
     }
 
-    const updatedFavoriteStatus = toggleFavorite(product, user.id);
-    setIsFavorite(updatedFavoriteStatus);
-    setAlertMessage(
-      `${updatedFavoriteStatus ? "Added" : "Removed"} ${product.name} ${updatedFavoriteStatus ? "to" : "from"} favorites.`
-    );
-    setAlertType(updatedFavoriteStatus ? "success" : "error");
-  };
+    if (!isUserLoggedIn()) {
+      showAlert("You must be logged in to add or remove items from favorites.", "error");
+      return;
+    }
 
-  if (loading) return <div>Loading...</div>;
-  if (error) return <div>{error}</div>;
+    try {
+      const user = getCurrentUser();
+      const updatedFavoriteStatus = toggleFavorite(product, user.id);
+      setIsFavorite(updatedFavoriteStatus);
+      
+      const action = updatedFavoriteStatus ? "Added" : "Removed";
+      const preposition = updatedFavoriteStatus ? "to" : "from";
+      showAlert(`${action} ${product.name} ${preposition} favorites.`, updatedFavoriteStatus ? "success" : "error");
+    } catch (err) {
+      console.error("Error toggling favorite:", err);
+      showAlert("Failed to update favorites. Please try again.", "error");
+    }
+  }, [product, toggleFavorite, showAlert]);
+
+  if (loading) {
+    return (
+      <div className="flex justify-center items-center h-screen">
+        <span className="loading loading-spinner loading-lg"></span>
+      </div>
+    );
+  }
+
+  if (error || !product) {
+    return (
+      <div className="container mx-auto p-4">
+        <div className="alert alert-error">
+          <span>{error || "Product not found"}</span>
+        </div>
+        <Link to="/products" className="btn btn-primary mt-4">
+          Back to Products
+        </Link>
+      </div>
+    );
+  }
 
   return (
     <div className="container mx-auto p-4">

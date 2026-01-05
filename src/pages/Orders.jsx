@@ -3,24 +3,40 @@ import axios from 'axios';
 import { useNavigate } from "react-router-dom";
 import OrderModal from "./OrderModal";
 import { Link } from "react-router-dom";
+import API_ENDPOINTS from "../config/api";
+import { getCurrentUser } from "../utils/storage";
+import { isUserLoggedIn } from "../utils/validation";
 
 const Orders = () => {
   const [orders, setOrders] = useState([]);
   const [products, setProducts] = useState([]);
   const [selectedOrder, setSelectedOrder] = useState(null);
   const [modalOpen, setModalOpen] = useState(false);
-  const user = JSON.parse(localStorage.getItem('user'));
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const user = getCurrentUser();
   const navigate = useNavigate();
 
   useEffect(() => {
+    if (!isUserLoggedIn() || !user?.id) {
+      navigate('/login');
+      return;
+    }
+
     const fetchOrders = async () => {
       try {
-        // const ordersResponse = await axios.get(`http://localhost:3001/orders?userId=${user.id}`);
-        const ordersResponse = await axios.get(`https://buy-now-jocc.onrender.com/orders?userId=${user.id}`);
-        // const productsResponse = await axios.get('http://localhost:3001/products');
-        const productsResponse = await axios.get('https://buy-now-jocc.onrender.com/products');
+        setLoading(true);
+        setError(null);
+        
+        const [ordersResponse, productsResponse] = await Promise.all([
+          axios.get(`${API_ENDPOINTS.ORDERS}?userId=${user.id}`),
+          axios.get(API_ENDPOINTS.PRODUCTS),
+        ]);
 
-        const sortedOrders = ordersResponse.data.map(order => ({
+        const ordersData = Array.isArray(ordersResponse.data) ? ordersResponse.data : [];
+        const productsData = Array.isArray(productsResponse.data) ? productsResponse.data : [];
+
+        const sortedOrders = ordersData.map(order => ({
           ...order,
           orderDate: new Date(order.orderDate.split('/').reverse().join('-')),
           orderTime: order.orderTime
@@ -29,14 +45,17 @@ const Orders = () => {
         });
 
         setOrders(sortedOrders);
-        setProducts(productsResponse.data);
+        setProducts(productsData);
       } catch (error) {
         console.error('Error fetching data:', error);
+        setError('Failed to load orders. Please try again later.');
+      } finally {
+        setLoading(false);
       }
     };
 
     fetchOrders();
-  }, [user.id]);
+  }, [user?.id, navigate]);
 
   const handleOrderClick = (orderNumber) => {
     const order = orders.find(o => o.orderNumber === orderNumber);

@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import Button from "../components/Button";
+import API_ENDPOINTS from "../config/api";
+import { setStorageItem, STORAGE_KEYS } from "../utils/storage";
+import { isValidEmail } from "../utils/validation";
 
 const Register = () => {
   const [formData, setFormData] = useState({
@@ -26,26 +29,38 @@ const Register = () => {
     e.preventDefault();
     const { username, email, password, confirmPassword } = formData;
 
+    if (!username || !email || !password || !confirmPassword) {
+      setErrorMessage("Please fill in all fields.");
+      return;
+    }
+
+    if (!isValidEmail(email)) {
+      setErrorMessage("Please enter a valid email address.");
+      return;
+    }
+
     if (password !== confirmPassword) {
-      setErrorMessage("Invalid email or password!");
+      setErrorMessage("Passwords do not match!");
+      return;
+    }
+
+    if (password.length < 6) {
+      setErrorMessage("Password must be at least 6 characters long.");
       return;
     }
 
     try {
-      // const response = await axios.post("http://localhost:3001/users", {
-      //   username,
-      //   email,
-      //   password,
-      // });
-      const response = await axios.post("https://buy-now-jocc.onrender.com/users", {
+      const response = await axios.post(API_ENDPOINTS.USERS, {
         username,
         email,
         password,
       });
-      localStorage.setItem("user", JSON.stringify(response.data));
-      console.log(response.data);
-      navigate("/");
-      window.location.reload();
+      
+      if (response.data) {
+        setStorageItem(STORAGE_KEYS.USER, response.data);
+        navigate("/");
+        window.location.reload();
+      }
     } catch (error) {
       console.error("There was an error registering the user!", error);
     }

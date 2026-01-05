@@ -9,6 +9,8 @@ import CartPreview from "../pages/CartPreview";
 import { useOnClickOutside } from "usehooks-ts";
 import { getFavouriteCount } from "./GetFavouriteCount";
 import { FaRegClock } from 'react-icons/fa';
+import API_ENDPOINTS from "../config/api";
+import { getCurrentUser, removeStorageItem, STORAGE_KEYS } from "../utils/storage";
 
 
 const Navbar = () => {
@@ -47,23 +49,29 @@ const Navbar = () => {
     const navigate = useNavigate()
 
     useEffect(() => {
-        // axios.get('http://localhost:3001/categories')
-        axios.get('https://buy-now-jocc.onrender.com/categories')
-            .then(response => {
-                setCategories(response.data)
-            })
-    })
+        const fetchCategories = async () => {
+            try {
+                const response = await axios.get(API_ENDPOINTS.CATEGORIES);
+                setCategories(Array.isArray(response.data) ? response.data : []);
+            } catch (error) {
+                console.error("Error fetching categories:", error);
+            }
+        };
+
+        fetchCategories();
+    }, []);
 
     useEffect(() => {
-        const storedUser = localStorage.getItem('user');
+        const storedUser = getCurrentUser();
         if (storedUser) {
-            setUser(JSON.parse(storedUser));
+            setUser(storedUser);
         }
-    }, []); const handleLogout = () => {
-        localStorage.removeItem("user");
+    }, []);
+
+    const handleLogout = () => {
+        removeStorageItem(STORAGE_KEYS.USER);
         setUser(null);
         setIsDropdownOpen(false);
-
         navigate('/');
         window.location.reload();
     };

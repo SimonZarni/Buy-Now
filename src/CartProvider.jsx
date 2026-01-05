@@ -1,201 +1,217 @@
 import PropTypes from 'prop-types';
-import { createContext, useState, useEffect } from 'react';
+import { createContext, useState, useEffect, useCallback } from 'react';
 import CartContext from './CartContext';
-const CartProvider = ({ children }) => {
+import { getUserId, getStorageItem, setStorageItem, STORAGE_KEYS } from '../utils/storage';
+import { calculateDiscountedPrice as calcDiscountedPrice } from '../utils/price';
 
+const CartProvider = ({ children }) => {
+    // Initialize cart items from localStorage
     const [cartItems, setCartItems] = useState(() => {
-        const user = JSON.parse(localStorage.getItem('user'));
-        const userId = user ? user.id : null;
+        const userId = getUserId();
         if (userId) {
-            const savedCartItems = localStorage.getItem(`cartItems_${userId}`);
-            const parsedCartItems = savedCartItems ? JSON.parse(savedCartItems) : [];
-            return Array.isArray(parsedCartItems) ? parsedCartItems : [];
+            const savedCartItems = getStorageItem(STORAGE_KEYS.CART_ITEMS(userId));
+            return Array.isArray(savedCartItems) ? savedCartItems : [];
         }
         return [];
     });
 
+    // Persist cart items to localStorage
     useEffect(() => {
-        const user = JSON.parse(localStorage.getItem('user'));
-        const userId = user ? user.id : null;
-        if (userId) {
-            localStorage.setItem(`cartItems_${userId}`, JSON.stringify(cartItems));
+        const userId = getUserId();
+        if (userId && cartItems.length >= 0) {
+            setStorageItem(STORAGE_KEYS.CART_ITEMS(userId), cartItems);
         }
     }, [cartItems]);
 
-    const getUserId = () => {
-        const user = JSON.parse(localStorage.getItem('user'));
-        return user ? user.id : null;
-    };
-
     const [isCartOpen, setIsCartOpen] = useState(false);
 
-    const calculateDiscountedPrice = (item) => {
+    /**
+     * Check if two cart items match (same product, color, and size)
+     * @param {Object} item1 - First cart item
+     * @param {Object} item2 - Second cart item
+     * @returns {boolean} - Whether items match
+     */
+    const itemsMatch = useCallback((item1, item2) => {
+        const sameId = item1.id === item2.id;
+        const sameColor = item1.selectedColor?.code === item2.selectedColor?.code;
+        const sameSize = item1.selectedSize === item2.selectedSize;
+        const noColorOrSize = !item1.selectedColor && !item1.selectedSize && 
+                             !item2.selectedColor && !item2.selectedSize;
+
+        return noColorOrSize ? sameId : sameId && sameColor && sameSize;
+    }, []);
+
+    /**
+     * Find matching cart item
+     * @param {Object} product - Product to match
+     * @returns {Object|undefined} - Matching cart item or undefined
+     */
+    const findMatchingCartItem = useCallback((product) => {
+        return cartItems.find((cartItem) => 
+            itemsMatch(cartItem.product, product)
+        );
+    }, [cartItems, itemsMatch]);
+
+    /**
+     * Calculate discounted price for an item
+     * @param {Object} item - Product item
+     * @returns {string} - Formatted price string
+     */
+    const calculateDiscountedPrice = useCallback((item) => {
         const price = parseFloat(item.price);
         if (isNaN(price)) {
-          return '0.00';
+            return '0.00';
         }
-        if (item.discount) {
-          return (price - (price * item.discount / 100)).toFixed(2);
-        }
-        return price.toFixed(2);
-      };
+        const discounted = calcDiscountedPrice(price, item.discount);
+        return discounted.toFixed(2);
+    }, []);
 
-    
-
-    const addToCart = (item) => {
+    /**
+     * Add item to cart
+     * @param {Object} item - Product item to add
+     */
+    const addToCart = useCallback((item) => {
         const userId = getUserId();
         if (!userId) {
             console.warn("No user logged in. Cannot add to cart.");
             return;
         }
-    
-        console.log("Cart Items: ", cartItems);
-        console.log("Adding to cart:", item);
-    
+
         const itemPrice = calculateDiscountedPrice(item);
-    
-        const isItemInCart = cartItems.find((cartItem) => {
-            const sameId = cartItem.product.id === item.id;
-            const sameColor = cartItem.product.selectedColor?.code === item.selectedColor?.code;
-            const sameSize = cartItem.product.selectedSize === item.selectedSize;
-            const noColorOrSize = !item.selectedColor && !item.selectedSize;
-    
-            return noColorOrSize ? sameId : sameId && sameColor && sameSize;
-        });
-    
-        if (isItemInCart) {
-            setCartItems(
-                cartItems.map((cartItem) => {
-                    const sameId = cartItem.product.id === item.id;
-                    const sameColor = cartItem.product.selectedColor?.code === item.selectedColor?.code;
-                    const sameSize = cartItem.product.selectedSize === item.selectedSize;
-                    const noColorOrSize = !item.selectedColor && !item.selectedSize;
-    
-                    if (noColorOrSize ? sameId : sameId && sameColor && sameSize) {
-                        return { ...cartItem, quantity: cartItem.quantity + 1, product: { ...cartItem.product, price: itemPrice } };
-                    }
-                    return cartItem;
-                })
+        const matchingItem = findMatchingCartItem(item);
+
+        if (matchingItem) {
+            setCartItems((prevItems) =>
+                prevItems.map((cartItem) =>
+                    itemsMatch(cartItem.product, item)
+                        ? {
+                              ...cartItem,
+                              quantity: cartItem.quantity + 1,
+                              product: { ...cartItem.product, price: itemPrice },
+                          }
+                        : cartItem
+                )
             );
         } else {
-            setCartItems([...cartItems, { product: { ...item, price: itemPrice }, quantity: 1 }]);
+            setCartItems((prevItems) => [
+                ...prevItems,
+                { product: { ...item, price: itemPrice }, quantity: 1 },
+            ]);
         }
-    
+
         setIsCartOpen(true);
         setTimeout(() => {
             setIsCartOpen(false);
-        }, 3000); 
-    };
-    
+        }, 3000);
+    }, [findMatchingCartItem, itemsMatch, calculateDiscountedPrice]);
 
-    const getCartQuantity = () => {
-        return cartItems.length;
-    };
+    /**
+     * Get total number of items in cart
+     * @returns {number} - Total cart quantity
+     */
+    const getCartQuantity = useCallback(() => {
+        return cartItems.reduce((total, item) => total + item.quantity, 0);
+    }, [cartItems]);
 
-
-    const updateCart = (item) => {
+    /**
+     * Update cart item quantity (increment)
+     * @param {Object} item - Cart item to update
+     */
+    const updateCart = useCallback((item) => {
         const userId = getUserId();
         if (!userId) {
             console.warn("No user logged in. Cannot update cart.");
             return;
         }
 
-        const isItemInCart = cartItems.find((cartItem) => {
-            const sameId = cartItem.product.id === item.product.id;
-            const sameColor = cartItem.product.selectedColor?.code === item.product.selectedColor?.code;
-            const sameSize = cartItem.product.selectedSize === item.product.selectedSize;
-            const noColorOrSize = !item.product.selectedColor && !item.product.selectedSize;
+        const matchingItem = findMatchingCartItem(item.product);
 
-            return noColorOrSize ? sameId : sameId && sameColor && sameSize;
-        });
-    
-        if (isItemInCart) {
-            setCartItems(
-                cartItems.map((cartItem) => {
-                    const sameId = cartItem.product.id === item.product.id;
-                    const sameColor = cartItem.product.selectedColor?.code === item.product.selectedColor?.code;
-                    const sameSize = cartItem.product.selectedSize === item.product.selectedSize;
-                    const noColorOrSize = !item.product.selectedColor && !item.product.selectedSize;
-
-                    if (noColorOrSize ? sameId : sameId && sameColor && sameSize) {
-                        return { ...cartItem, quantity: cartItem.quantity + 1 };
-                    }
-                    return cartItem;
-                })
+        if (matchingItem) {
+            setCartItems((prevItems) =>
+                prevItems.map((cartItem) =>
+                    itemsMatch(cartItem.product, item.product)
+                        ? { ...cartItem, quantity: cartItem.quantity + 1 }
+                        : cartItem
+                )
             );
         } else {
-            setCartItems([...cartItems, { product: item, quantity: 1 }]);
+            setCartItems((prevItems) => [
+                ...prevItems,
+                { product: item.product, quantity: 1 },
+            ]);
         }
-    };
+    }, [findMatchingCartItem, itemsMatch]);
 
-
-    const removeFromCart = (item) => {
+    /**
+     * Remove item from cart or decrease quantity
+     * @param {Object} item - Cart item to remove
+     */
+    const removeFromCart = useCallback((item) => {
         const userId = getUserId();
         if (!userId) {
             console.warn("No user logged in. Cannot remove from cart.");
             return;
         }
 
-        const isItemInCart = cartItems.find((cartItem) => {
-            const sameId = cartItem.product.id === item.product.id;
-            const sameColor = cartItem.product.selectedColor?.code === item.product.selectedColor?.code;
-            const sameSize = cartItem.product.selectedSize === item.product.selectedSize;
-            const noColorOrSize = !item.product.selectedColor && !item.product.selectedSize;
+        const matchingItem = findMatchingCartItem(item.product);
 
-            return noColorOrSize ? sameId : sameId && sameColor && sameSize;
-        });
-    
-        if (isItemInCart) {
-            if (isItemInCart.quantity === 1) {
-                setCartItems(cartItems.filter((cartItem) => {
-                    const sameId = cartItem.product.id === item.product.id;
-                    const sameColor = cartItem.product.selectedColor?.code === item.product.selectedColor?.code;
-                    const sameSize = cartItem.product.selectedSize === item.product.selectedSize;
-                    const noColorOrSize = !item.product.selectedColor && !item.product.selectedSize;
-
-                    return !(
-                        (noColorOrSize ? sameId : sameId && sameColor && sameSize)
-                    );
-                }));
+        if (matchingItem) {
+            if (matchingItem.quantity === 1) {
+                setCartItems((prevItems) =>
+                    prevItems.filter(
+                        (cartItem) => !itemsMatch(cartItem.product, item.product)
+                    )
+                );
             } else {
-                setCartItems(
-                    cartItems.map((cartItem) => {
-                        const sameId = cartItem.product.id === item.product.id;
-                        const sameColor = cartItem.product.selectedColor?.code === item.product.selectedColor?.code;
-                        const sameSize = cartItem.product.selectedSize === item.product.selectedSize;
-                        const noColorOrSize = !item.product.selectedColor && !item.product.selectedSize;
-
-                        if (noColorOrSize ? sameId : sameId && sameColor && sameSize) {
-                            return { ...cartItem, quantity: cartItem.quantity - 1 };
-                        }
-                        return cartItem;
-                    })
+                setCartItems((prevItems) =>
+                    prevItems.map((cartItem) =>
+                        itemsMatch(cartItem.product, item.product)
+                            ? { ...cartItem, quantity: cartItem.quantity - 1 }
+                            : cartItem
+                    )
                 );
             }
         }
-    };
+    }, [findMatchingCartItem, itemsMatch]);
 
-
-    const clearCart = () => {
+    /**
+     * Clear all items from cart
+     */
+    const clearCart = useCallback(() => {
         setCartItems([]);
-    };
+    }, []);
 
-    const getSubTotal=(item)=>{
-        return item.product.price * item.quantity;
-      }
-    
-      const getCartTotal = () => {
+    /**
+     * Calculate subtotal for a cart item
+     * @param {Object} item - Cart item
+     * @returns {number} - Subtotal
+     */
+    const getSubTotal = useCallback((item) => {
+        const price = parseFloat(item.product.price) || 0;
+        return price * item.quantity;
+    }, []);
+
+    /**
+     * Calculate total cart value
+     * @returns {number} - Total cart value
+     */
+    const getCartTotal = useCallback(() => {
         return cartItems.reduce((total, item) => total + getSubTotal(item), 0);
-      };
+    }, [cartItems, getSubTotal]);
 
+    /**
+     * Handle cart mouse enter
+     */
+    const handleCartMouseEnter = useCallback(() => {
+        setIsCartOpen(true);
+    }, []);
 
-      const handleCartMouseEnter = () => {
-          setIsCartOpen(true);
-      };
-  
-      const handleCartMouseLeave = () => {
-          setIsCartOpen(false);
-      };
+    /**
+     * Handle cart mouse leave
+     */
+    const handleCartMouseLeave = useCallback(() => {
+        setIsCartOpen(false);
+    }, []);
   
       return (
           <CartContext.Provider

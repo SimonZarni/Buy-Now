@@ -1,9 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import axios from "axios";
 import { FaStar, FaSearch } from "react-icons/fa";
 import Button from "./Button";
+import API_ENDPOINTS from "../config/api";
+import { getCurrentUser } from "../utils/storage";
+import { isUserLoggedIn } from "../utils/validation";
+import ReviewContext from "../ReviewContext";
 
-const Review = ({ product }) => {
+const Review = ({ product, reviews: propReviews, setReviews: setPropReviews }) => {
+  const { addReview: addReviewToContext, getProductReviews } = useContext(ReviewContext);
   const [reviews, setReviews] = useState([]);
   const [reviewText, setReviewText] = useState("");
   const [rating, setRating] = useState(1);
@@ -11,81 +16,83 @@ const Review = ({ product }) => {
   const [alertType, setAlertType] = useState(null);
   const [showAllReviews, setShowAllReviews] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
-  const [sortOption, setSortOption] = useState("date"); // default sort by date
+  const [sortOption, setSortOption] = useState("date");
 
-  const displayedReviews = showAllReviews ? reviews : reviews.slice(0, 3);
+  // Use prop reviews if provided, otherwise fetch from context
+  const displayReviews = propReviews || reviews;
+  const displayedReviews = showAllReviews ? displayReviews : displayReviews.slice(0, 3);
 
   useEffect(() => {
-    const fetchReviews = async () => {
-      try {
-        const response = await axios.get(`http://localhost:3001/reviews?productId=${product.id}`);
-        setReviews(response.data);
-      } catch (error) {
-        console.error("Error fetching reviews:", error);
-      }
-    };
-
-    fetchReviews();
-  }, [product.id]);
+    if (propReviews) {
+      setReviews(propReviews);
+    } else if (product?.id) {
+      const productReviews = getProductReviews(product.id);
+      setReviews(productReviews);
+    }
+  }, [product?.id, propReviews, getProductReviews]);
 
   const handleSubmitReview = async (e) => {
     e.preventDefault();
 
-    const user = JSON.parse(localStorage.getItem("user"));
-    if (!user) {
+    if (!isUserLoggedIn()) {
       setAlertMessage("You must be logged in to submit a review.");
       setAlertType("error");
       return;
     }
 
+    if (!reviewText.trim()) {
+      setAlertMessage("Please enter a review.");
+      setAlertType("error");
+      return;
+    }
+
+    const user = getCurrentUser();
     const newReview = {
       productId: product.id,
       userId: user.id,
       username: user.username,
-      reviewText: reviewText,
-      rating: rating,
+      reviewText: reviewText.trim(),
+      rating: parseInt(rating, 10),
       date: new Date().toISOString(),
     };
 
     try {
-      const response = await axios.post("http://localhost:3001/reviews", newReview);
-      setReviews([...reviews, response.data]);
-      setReviewText("");
-      setRating(1);
-      setAlertMessage("Review submitted successfully!");
-      setAlertType("success");
+      const success = await addReviewToContext(newReview);
+      if (success) {
+        const updatedReviews = getProductReviews(product.id);
+        setReviews(updatedReviews);
+        if (setPropReviews) {
+          setPropReviews(updatedReviews);
+        }
+        setReviewText("");
+        setRating(1);
+        setAlertMessage("Review submitted successfully!");
+        setAlertType("success");
+      } else {
+        throw new Error("Failed to add review");
+      }
     } catch (error) {
       console.error("Error submitting review:", error);
-      setAlertMessage("Error submitting review.");
+      setAlertMessage("Error submitting review. Please try again.");
       setAlertType("error");
     }
   };
 
-  const calculateRatingStats = () => {
-    if (reviews.length === 0)
-      return { averageRating: 0, ratingDistribution: {} };
-
-    let totalRating = 0;
-    let ratingDistribution = { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0 };
-
-    reviews.forEach((review) => {
-      totalRating += review.rating;
-      ratingDistribution[review.rating] += 1;
-    });
-
-    const averageRating = totalRating / reviews.length;
-
-    return { averageRating: averageRating.toFixed(1), ratingDistribution };
+  const { calculateRatingStats } = useContext(ReviewContext);
+  const ratingStats = product?.id ? calculateRatingStats(product.id) : { 
+    averageRating: 0, 
+    ratingDistribution: { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0 },
+    totalReviews: 0,
   };
 
-  const { averageRating, ratingDistribution } = calculateRatingStats();
+  const { averageRating, ratingDistribution } = ratingStats;
 
   const handleSearchChange = (e) => setSearchTerm(e.target.value);
 
   const handleSortChange = (e) => setSortOption(e.target.value);
 
-  const filteredReviews = reviews
-    .filter(review => review.reviewText.toLowerCase().includes(searchTerm.toLowerCase()))
+  const filteredReviews = displayReviews
+    .filter(review => review.reviewText?.toLowerCase().includes(searchTerm.toLowerCase()))
     .sort((a, b) => {
       if (sortOption === "rating") {
         return b.rating - a.rating;
@@ -108,7 +115,7 @@ const Review = ({ product }) => {
           </div>
           <p className="ml-2 text-lg font-semibold">{averageRating} / 5</p>
         </div>
-        <p className="text-gray-700 mt-2">Total Reviews: {reviews.length}</p>
+        <p className="text-gray-700 mt-2">Total Reviews: {ratingStats.totalReviews || displayReviews.length}</p>
 
         <div className="mt-4">
           {Object.entries(ratingDistribution).map(([rating, count]) => (

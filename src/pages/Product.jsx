@@ -5,13 +5,16 @@ import { useLocation } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import ReviewContext from '../ReviewContext';
 import FavoriteContext from '../FavoriteContext';
+import API_ENDPOINTS from '../config/api';
+import { getCurrentUser } from '../utils/storage';
+import { calculateDiscountedPrice } from '../utils/price';
 
 const Product = () => {
     const [sortOption, setSortOption] = useState('');
 
     const { toggleFavorite, isFavorite } = useContext(FavoriteContext);
-    const user = JSON.parse(localStorage.getItem("user"));
-    const userId = user ? user.id : null;
+    const user = getCurrentUser();
+    const userId = user?.id || null;
 
     const { calculateRatingStats, getOrderCount } = useContext(ReviewContext)
     const location = useLocation();
@@ -30,25 +33,30 @@ const Product = () => {
     });
 
     useEffect(() => {
-        // axios.get('http://localhost:3001/products')
-        axios.get('https://buy-now-jocc.onrender.com/products')
-            .then(response => setProducts(response.data))
-            .catch(error => console.error("Error fetching data: ", error));
+        const fetchData = async () => {
+            try {
+                const [productsResponse, categoriesResponse, brandsResponse] = await Promise.all([
+                    axios.get(API_ENDPOINTS.PRODUCTS),
+                    axios.get(API_ENDPOINTS.CATEGORIES),
+                    axios.get(API_ENDPOINTS.BRANDS),
+                ]);
 
-        // axios.get('http://localhost:3001/categories')
-        axios.get('https://buy-now-jocc.onrender.com/categories')
-            .then(response => {
-                setCategories(response.data);
-                const allSubcategories = response.data.flatMap(category => category.subcategories);
+                setProducts(Array.isArray(productsResponse.data) ? productsResponse.data : []);
+                
+                const categoriesData = Array.isArray(categoriesResponse.data) ? categoriesResponse.data : [];
+                setCategories(categoriesData);
+                const allSubcategories = categoriesData.flatMap(category => 
+                    Array.isArray(category.subcategories) ? category.subcategories : []
+                );
                 setSubcategories(allSubcategories);
-            })
-            .catch(error => console.error("Error fetching categories: ", error));
+                
+                setBrands(Array.isArray(brandsResponse.data) ? brandsResponse.data : []);
+            } catch (error) {
+                console.error("Error fetching data: ", error);
+            }
+        };
 
-
-        // axios.get('http://localhost:3001/brands')
-        axios.get('https://buy-now-jocc.onrender.com/brands')
-            .then(response => setBrands(response.data))
-            .catch(error => console.error("Error fetching data: ", error));
+        fetchData();
     }, []);
 
     useEffect(() => {
@@ -344,31 +352,31 @@ const Product = () => {
                     ) : (
                         <div className="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-3 gap-7">
                             {sortedProducts.map(product => {
-                                const discountedPrice = product.discount
-                                    ? product.price - (product.price * product.discount / 100)
-                                    : product.price;
+                                const discountedPrice = calculateDiscountedPrice(
+                                    product.price,
+                                    product.discount
+                                );
                                 const { averageRating } = calculateRatingStats(product.id);
-                                const orderCount = getOrderCount(product.id)
+                                const orderCount = getOrderCount(product.id);
+                                
                                 return (
-                                    <>
-                                        <Link to={`/products/${product.id}`} key={product.id}>
-                                            <Card
-                                                img={product.image_url}
-                                                name={product.name}
-                                                description={product.description}
-                                                price={product.price}
-                                                colors={product.colors}
-                                                sizes={product.sizes}
-                                                discount={product.discount}
-                                                discountedPrice={discountedPrice}
-                                                averageRating={averageRating}
-                                                orderCount={orderCount}
-                                                onFavoriteClick={handleFavoriteClick}
-                                                isFavorite={userId ? isFavorite(product.id, userId) : false}
-                                                product={product}
-                                            />
-                                        </Link>
-                                    </>
+                                    <Link to={`/products/${product.id}`} key={product.id}>
+                                        <Card
+                                            img={product.image_url}
+                                            name={product.name}
+                                            description={product.description}
+                                            price={product.price}
+                                            colors={product.colors}
+                                            sizes={product.sizes}
+                                            discount={product.discount}
+                                            discountedPrice={discountedPrice}
+                                            averageRating={averageRating}
+                                            orderCount={orderCount}
+                                            onFavoriteClick={handleFavoriteClick}
+                                            isFavorite={userId ? isFavorite(product.id, userId) : false}
+                                            product={product}
+                                        />
+                                    </Link>
                                 );
                             })}
                         </div>
